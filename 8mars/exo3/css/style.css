@@ -1,0 +1,65 @@
+/*
+Style reset
+*/
+    /* Sélectionner TOUTES les balises du DOM */
+    *{
+        /* Supprimer les marges intérieures */
+        padding: 0;
+        /* Supprimer les marges extérieures */
+        margin: 0;
+    }
+
+    /* Ramener la valeur 1rem à 10px */
+    html{
+        font-size: 62.5%;
+    }
+
+    body{
+        font-size: 1.5rem; /* 1.5rem = 15px */
+    }
+    
+
+/*
+em/rem
+*/
+
+    h1{
+        font-size: 3rem; /* 3 fois le font-size de HTML (root) */
+    }
+
+    h1 b{
+        /* La taille de la font soit toujours 2 fois plus petite que son parent direct */
+        font-size: .5em;
+    }
+
+
+/*
+Style header
+*/
+        header{
+            /* Ajouter une bordure de 1px rouge */
+            border: .5rem solid red;
+
+            /* Ajouter une marge à l'intérieur de la balise */
+            padding: 2rem;
+
+             /* Ajouter une marge à l'extérieur de la balise */
+            margin: 2rem;
+        }
+
+        /* Modifier le type des balises li */
+        li{
+            display: inline-block;
+        }
+
+/*
+Style largeur site 
+*/
+    /* Limiter la largeur de header, main et footer à 950px */
+    header, main, footer{
+        max-width: 85rem; /* pour smartphone */
+
+        /* Centrer une balise de type block réduite en largeur */
+        margin: 2rem auto;
+
+    }
