@@ -17,6 +17,10 @@ Style reset
     body{
         font-size: 1.5rem; /* 1.5rem = 15px */
     }
+
+    section {
+        margin-bottom: 4rem;
+    }
     
 
 /*
@@ -61,5 +65,67 @@ Style largeur site
 
         /* Centrer une balise de type block réduite en largeur */
         margin: 2rem auto;
-
     }
+
+
+/*
+Mise en forme typographique
+*/
+    .presentation{
+
+        /* Modifier la famille de caractères de la font */
+        font-family: "Arial", sans-serif;   /* les guillemets permettent de dire que la priorité va à arial */
+
+        /* Modifier la taille de la font */
+        font-size: 1.7rem;
+
+        /* Modifier l'interlignage */
+        line-height: 2em;
+
+        /* Modifier la graisse de la font */
+        font-weight: bold;
+
+        /* Ajouter une ombre portée à la font */
+        text-shadow: .5rem .5rem .5rem blue;
+
+        /* Modifier la casse de la font (tout mettre en majuscules par exemple) */
+        text-transform: uppercase;
+
+        /* Modifier le style de la font (italic) */
+        font-style: italic;
+
+        /* Modifier la décoration de la font */
+        text-decoration: underline;
+
+        /* Modifier la couleur de la font */
+        color: white;
+
+        padding: 2rem;
+        background-color: red;
+        margin: 4rem auto;
+    }
+
+
+
+/*
+Utilisation des couleurs
+*/
+    #portfolio{
+
+        background-color: #3f51b5; /* Référence hexadecimale */
+        color: white; /* Nom intelligible */
+
+        text-align: center; /* Agit sur les textes et sur les balises inline (enfant) */
+
+        }
+
+    #portfolio article{
+        background-color: white;
+        color: black;
+        padding: 2rem;
+        margin: 1rem;
+
+        /* Faire en sorte d'afficher les articles sur 3 colonnes */
+        display: inline-block;
+    }
+
