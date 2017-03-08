@@ -11,13 +11,27 @@
         <!-- Ajouter un titre à la page -->
         <title>Bonjour le monde</title>
 
+        <style>
+
+        td {border:  1px dashed black; width: 100px; height: 100px}
+        ol {background-color: blue;}
+        input {text-align: center;}
+        table {border-collapse: collapse; text-align: center}
+        div {text-align: center}
+        .mike {color: red;} <!-- C'est une classe -->
+        #webForce{color: blue;}
+         
+         </style>
+
+        
+
     </head>
 
     <!-- Ajouter du contenu dans la page -->
     <body>
 
         <!-- Les titres -->
-        <h1><i> Titre</i> principal</h1> <!-- La balise H1 doit être unique sur la page -->
+        <h1 id="webForce">Titre</i> principal</h1> <!-- La balise H1 doit être unique sur la page -->
         <h2>Sous-titre jusqu'à H6</h2>
 
         <!-- Un lien dans un nouvel onglet -->
@@ -31,17 +45,17 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <b>Qui expedita eveniet</b>, sed sit, nobis ex saepe laboriosam vero magnam modi soluta accusantium rem, <i>voluptatem eum neque</i> magni. Illum, ad, delectus.</p>
 
         <!-- Liste ordonnée -->
-<ol style="background-color: blue;">
+<ol>
             <li>Pierre</li>
             <li>Paul</li>
             <li><i>Jacques</i></li>
         </ol>
-<ol style="background-color: blue;">
+<ol>
             <li>Pierre</li>
             <li>Paul</li>
             <li><i>Jacques</i></li>
         </ol>   
-<ol style="background-color: blue;">        
+<ol>        
     <li>Pierre</li>
             <li>Paul</li>
             <li><i>Jacques</i></li>
@@ -50,7 +64,7 @@
             <li><i>Jacques</i></li>
         </ol>
 
-<ol style="background-color: blue;">
+<ol>
             <li>Pierre</li>
             <li>Paul</li>
             <li><i>Jacques</i></li>
@@ -71,8 +85,12 @@
         <img src="img/minion.jpg" alt="Photo d'un minion'" >
         <img src="img/minion.jpg" alt="Photo d'un minion'" >
 
+
+
+         <!-- Formulaire -->
+
        <form action="about.html" method="post">
-           <div style="text-align: center">
+           <div>
 
   <fieldset style="background-image:url(http://www.photo-paysage.com/images_accueil/Paris.jpg);background-size: 100% 100%">
 
@@ -81,15 +99,43 @@
     <p><input type="text" name="Nom" value=""></p>
     Prénom:<br>
     <input type="text" name="Prénom" value=""><br><br>
-    <input type="submit" value="Envoyer" style="text-align: center;">
+    <input type="submit" value="Envoyer">
+
+
   </fieldset>
 
+
+
+            <!-- Tableau -->
+
+           </div>
+
+
 </form>
+    <table style= "border-collapse: collapse; text-align: center"> <!-- Coller les cellules et centrer le texte à l'intérieur' -->
+       
+    <tbody>
 
-        </form>
-        
-        
+    <tr> <!-- Faire des lignes -->
+       <td></td> <!-- Faire des colonnes -->
+       <td></td>
+       <td></td>
 
-    </body>
+   </tr>
+
+   <tr>
+       <td></td>
+       <td>Mike</td>
+       <td></td>
+
+   <tr>
+       <td></td>
+       <td></td>
+       <td></td>
+   </tr>
+
+</tbody>
+
+   
 
 </html> <!-- Fermer la balise html -->
