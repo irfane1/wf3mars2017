@@ -1,13 +1,28 @@
 <!DOCTYPE html> <!-- Définir le type de document -->
 <html>
 
-<!-- Configurer la page -->
-<head>
-    <!-- Afficher les caractères spéciaux -->
-    <meta charset="UTF -8">
-    <!-- Donner un titre à la page -->
-    <title>EXO1 - 8 mars</title>
-</head>
+    <!-- Configurer la page -->
+    <head>
+        <!-- Afficher les caractères spéciaux -->
+        <meta charset="UTF-8">
+        <!-- Donner un titre à la page -->
+        <title>EXO2 Intégrer un fichier CSS - 8 mars</title>
+
+        <!-- Intégrer la feuille de style CSS -->
+        <link rel="stylesheet" href="css/style.css">
+        
+
+    </head>
+    
+    <!-- Afficher le style dans la balise head -->
+    <style>
+
+        h2{
+            color: red;
+        }
+
+    </style>
+    
 
     <!-- Afficher du contenu dans la page -->
 <body>
@@ -20,6 +35,7 @@
         <!-- Navigation principale -->
         <nav>
             <ul>
+        <!-- Ajouter du CSS en ligne -->                
                 <li><a href="#">Accueil</a></li>
                 <li><a href="#">A propos</a></li>
                 <li><a href="#">Portfolio</a></li>
@@ -35,19 +51,19 @@
         <main>
 
         <!-- Créer une zone -->
-        <section>
-            <h2>A propos de Irfane Tayabdjee</h2>
+        <section class="redBackground" >
+            <h2 id="bigTitle">A propos de <b>Irfane Tayabdjee</b></h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor earum, reiciendis sed non commodi mollitia, hic ipsum fuga voluptate sequi nemo neque corrupti vitae deserunt ad nihil officiis error accusamus.</p>
         </section>
 
          <!-- Créer une zone -->
         <section>
-            <h2>Portfolio de Irfane Tayabdjee</h2>
+            <h2 id="portfolioTitle">Portfolio de <b>Irfane Tayabdjee</b></h2>
             <p>Cliquer sur un des projets ci-dessous</p
             
             <!-- Créer une sous-section -->
             <article>
-                <h3>Projet 1</h3>
+                <h3 id="Important">Projet 1</h3>
                 <p>Lorem ipsum dolor sit amet</p>
             </article>
 
@@ -65,7 +81,7 @@
 
         <!-- Créer une zone -->
         <section>
-            <h2>Contacter Irfane Tayabdjee</h2>
+            <h2>Contacter <b>Irfane Tayabdjee</b></h2>
             <p>Vous pouvez envoyer un email en cliquant sur cette adresse :
                 <a href="#">irfanetayabdjee@msn.com</a></p>
         </section>
@@ -74,7 +90,8 @@
         </main>
 
         <!-- Fermeture de la page -->
-        <footer>
+        <footer class="redBackground">
+                <p> Under MIT Licence</p>
 
         </footer>
     
