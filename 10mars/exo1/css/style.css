@@ -1,0 +1,56 @@
+p{
+    margin: 0;
+    padding: 0;
+}
+
+section{
+    border: .1rem solid red;
+    height: 30rem;
+    width: 30rem;
+    margin: 10rem auto;
+
+    /* Bloquer les enfants dans le parent */
+    position: relative;
+}
+
+article{
+    height: 5rem;
+    width: 5rem;
+    font-size: 3rem;
+    font-weight: bold;
+
+    /* Changer la position pour placer précisément les articles */
+    position: absolute;
+}
+
+#first{
+    background: green;
+
+    /* Placer l'article en bas à droite */
+    bottom: 0;
+    right: 0;
+}
+
+#second{
+    background: yellow;
+
+    /* Placer l'article en bas à gauche */
+    bottom: 0;
+    left: 0;    
+}
+
+#third{
+    background: red;
+
+    /* Placer l'article en haut à droite */
+    top: 0;
+    right: 0;    
+}
+
+#fourth{
+    background: blue;
+
+    /* Placer l'article en bas à droite */
+    top: 0;
+    left: 0;    
+}

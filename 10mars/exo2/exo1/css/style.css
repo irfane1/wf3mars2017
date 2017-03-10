@@ -1,0 +1,66 @@
+li{
+    display: inline-block;
+}
+
+ul, main{
+    padding: 0;
+    max-width: 30rem;
+    margin: auto;
+}
+
+nav{
+    text-align: right;
+}
+
+header, footer{
+    background: black;
+    color: white;
+    padding: 0.5rem 1rem;
+}
+
+/*
+Positionner la première li de la nav
+*/
+    nav ul{
+        /* Bloquer les enfants LI */
+        position: relative;
+    }
+
+    #liOnLeft{
+        position: absolute;
+        left: 0;
+    }
+
+/*
+Positionner la dernière li de la nav
+*/
+    footer ul{
+        /* Bloquer les enfants de li */
+        position: relative;
+    }
+
+    #lastLi{
+        position: absolute;
+        right: 0;
+    }
+
+/*
+Figer une balise
+*/
+    header{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    footer{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    main{
+        padding: 2rem 0;
+    }
