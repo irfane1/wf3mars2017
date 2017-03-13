@@ -1,0 +1,410 @@
+/* Importer un fichier CSS */
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,700,900|Ultra);
+
+/*
+Style Reset
+*/
+    /* Supprimer toutes les marges */
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Faire en sorte que 1rem soit égal à 10px */
+    html{
+        font-size: 62.5%;
+    }
+
+    body{
+        font-size: 1.5rem; /* => 15px */
+
+        /* Changer la famille de caractères */
+        font-family: 'Raleway', sans-serif;
+        
+    }
+
+    /* Supprimer la décoration des balises A */
+    a{
+        text-decoration: none;
+    }   
+
+    /* Faire en sorte que les images ne dépassent pas leur parent */
+    img{
+        max-width: 100%;
+    }    
+
+    section{
+        padding: 6rem 0;
+    }
+
+    
+
+/*
+Style largeur maximum
+*/
+    nav ul,
+    main section:first-child,
+    main section:nth-child(2) p,
+    main section:last-child,
+    footer section{
+
+        /* Définir une largeur maximum */
+        max-width: 95rem;
+
+        /* Centrer une balise de type block dans son parent */
+        margin: auto;
+    }
+
+/*
+Style header
+*/
+
+header{
+
+        /* Aligner le texte au centre */
+        text-align: center;
+
+        /* Ajouter une couleur de la font */
+        color: white;
+
+        /* Ajouter une couleur de fond */
+        background: #18BC9C;
+
+         /* Ajouter une marge intérieure en bas de 60px */
+        padding-bottom: 6rem;
+    }
+
+
+nav{
+    /* Mettre le texte en majuscules */
+    text-transform: uppercase;
+
+    /* Aligner le texte à droite */
+    text-align: right;
+    
+    /* Ajouter une couleur de fond */
+    background: #2c3e50;
+
+    /* Ajouter une marge intérieure de 30px */
+    padding: 3rem;
+
+    /* Ajouter une marge extérieure en bas de 60px */
+    margin-bottom: 6rem;
+}
+
+nav a{
+    /* Modifier la couleur du texte */    
+    color: white;
+
+    /* Passer le texte en gras */
+    font-weight: bold;
+}
+
+li{
+    /* Aligner les balises LI */
+    display: inline-block; 
+
+    /* Ajouter une marge extérieure à droite */
+    margin-right: 1rem;
+}
+
+h1, h2, h3{
+        font-family: 'Ultra', serif;
+
+        font-weight: 400;
+    }
+
+h1{
+    /* Mettre le texte en majuscules */
+    text-transform: uppercase;
+
+    /* Augmenter la taille de la font (50px) */
+    font-size: 5rem;    
+    
+    /* Ajouter une marge intérieure en haut de 30px */
+    padding-bottom: 3rem;
+
+    /* Bloquer les enfants dans le parent */
+    position: relative;
+}
+
+/* Créer une barre horizontale sous la balise h1 */
+h1:after{
+    /* Ajouter du contenu (même vide) pour afficher la balise */
+    content: "";
+
+    /* Changer le type de balise */
+    display: block;
+
+    /* Modifier la taille */
+    height: .5rem;
+    width: 20rem;
+
+    /* Centrer dans la page */
+    margin: 2rem auto;
+
+    /* Ajouter de la couleur */
+    background: white;
+}
+
+h1:before{
+    content: "";
+    display: block;
+    width: 4rem;
+    height: 4rem;
+
+    /* Centrer une balise de type block réduite en largeur */
+    margin: auto;
+
+    /* Ajouter une image de fond */
+    background-image: url(../img/star-xxl.png);
+
+    /* Bloquer la répétition de l'image de fond */
+    background-repeat: no-repeat;
+
+    /* Modifier la taille de l'image de fond */
+    background-size: 100%;    
+
+    /* Changer la couleur de fond */
+    background-color: #18bc9c;
+
+    border: 1rem solid #18bc9c;
+
+    /* Positionner la balise */
+    position: absolute;
+    top: 100%;
+    left: 50%;
+
+
+    -webkit-transform: translate(-50%, -60%);
+    transform: translate(-50%, -60%);
+}
+
+h2{
+    /* Aligner le texte au centre */
+    text-align: center;
+
+    /* Modifier la casse */
+        text-transform: uppercase;
+
+    /* Ajouter une marge extérieure en bas de 30px */
+    margin-bottom: 3rem;
+
+    font-size: 4.5rem;
+}
+
+h3{
+    /* Modifier la taille de la font */
+    font-size: 2.5rem;
+
+    /* Modifier la casse */
+    text-transform: uppercase;
+
+    /* Ajouter une marge extérieure en bas de 30px */        
+    margin-bottom: 3rem;                
+}
+
+
+header p{
+    /* Augmenter la taille de la font (25px) */
+    font-size: 2.5rem;
+}
+
+nav ul{
+    /* Bloquer les enfants dans leur parent */
+    position: relative;
+
+    line-height: 0;
+}
+
+
+/* Sélectionner le premier enfant */
+nav li:first-child{
+    /* Sortir la balise du flux pour la repositionner précisément */
+    position: absolute;
+
+    /* Placer la balise à gauche */
+    left: 0;
+
+    /* Modifier la taille de la font */
+    font-size: 1.5em;
+}
+
+
+/*
+Style portfolio
+*/
+    main section:first-child{
+        /* Centrer dans la largeur tous les éléments in-line */
+        text-align: center;
+    }
+
+    main section:first-child article{
+
+        /* Ajouter une marge extérieure de 10px */
+        margin: 1rem;
+
+        /* Créer 3 colonnes */
+        display: inline-block;
+        width: 29%;
+
+        /* Bloquer les enfants dans leur parent */
+        position: relative;        
+    }
+   
+    main section:first-child a{
+        font-size: 8rem;
+        background: rgba(24, 188, 156, .7);
+        color: white;
+
+        /* Sortir la balise du flux pour la positionner précisément */
+        position: absolute;
+
+        /* Placer la balise en haut à gauche  */
+        top: 0;
+        left: 0;
+
+        /* Faire en sorte que la balise soit à 100% de la taille de son parent */
+        width: 100%;
+        height: 100%;
+
+        /* Réduire l'opacité de la balise */
+        opacity: 0;
+
+        /* Gérer les transitions entre les états de la balise */
+        -webkit-transition: all .5s;
+        transition: all .5s;
+        
+    }
+
+    /* Modifier l'opacité de la balise en hover */
+    main section:first-child a:hover{
+        opacity: 1;
+    }    
+
+    main section:first-child a:hover .fa{
+        top: 50%;
+    }
+
+    main section:first-child .fa {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+
+        /* Décaler la balise sur l'axe X et Y */
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+
+        -webkit-transition: all .5s;
+        transition: all .5s;
+    }
+
+
+/*
+Style About Me
+*/
+    /* Sélectionner le N-ème (nth) enfant */
+    main section:nth-child(2){
+        /* Modifier la couleur des textes */
+        color: snow;
+        
+        /* Modifier la couleur de fond */
+        background: #18BC9C;
+
+        /* Centrer le texte */        
+        text-align: center;
+
+    }
+
+    /* Sélectionner le N-ème (nth) enfant */
+    main section:nth-child(2) p{
+
+        /* Afficher le exte sur deux colonnes */
+        -webkit-column-count: 2; /* Chrome, Safari, Opera */
+        -moz-column-count: 2; /* Firefox */
+        column-count: 2;
+
+        /* Justifier le texte */
+        text-align: justify;
+
+        margin-bottom: 4rem;
+}
+    
+        /* Sélectionner le N-ème (nth) enfant */
+    main section:nth-child(2) a{
+
+        color: snow;
+        border: .3rem solid snow;
+        padding: 1rem 1.5rem;
+        font-weight: bold;
+
+        /* Créer un bord arrondi */        
+        -webkit-border-radius: 1rem;
+        -moz-border-radius: 1rem;
+        border-radius: 1rem;
+    }
+
+/*
+Style Contact Me
+*/
+    input, textarea{
+        display: block;
+        width: 90%;
+        margin: 1rem auto;
+        padding: 1rem;
+        font-size: 2rem;
+
+        /* Annuler le style du navigateur */
+        border: none;
+        /* redéfinir la bordure */
+        border-bottom: .1rem solid grey;
+    }
+
+    textarea{
+        /* Définir une hauteur minimum */
+        min-height: 20rem;
+    }
+
+    /* Sélectionner une balise grâce à son attribut et sa valeur */
+    [type="submit"]{
+        width: 10rem;
+        display: inline-block;
+        background: #18bc9c;
+        color: white;
+        font-weight: bold;
+        margin-left: 3rem;
+
+        -webkit-border-radius: 1rem;
+        -moz-border-radius: 1rem;
+        border-radius: .5rem;
+    }
+
+
+/*
+Style footer
+*/
+
+    footer{
+        color: white;
+        text-align: center;
+        background: #2c3e50;
+    }
+
+    footer article{
+        display: inline-block;
+        width: 29%;
+
+        /* Gérer l'alignement vertical */
+        vertical-align: top;
+    }
+
+    /* Sélectionner une balise grâce à son attribut et sa valeur */
+    [href="http://google.com"]{
+        color: #18bc9c
+    }
+
+    aside{
+        padding: 2.5rem;    
+        background: #233140;
+    }
