@@ -1,0 +1,162 @@
+/*
+Style Reset
+*/
+    *{
+        margin: 0;
+        padding: 0;
+      
+    }
+
+    html{
+        font-size: 62.5%;
+    }
+
+    body{
+        font-size: 1.5rem;
+    }
+
+    section{
+        border: .1rem solid red;
+        height: 15rem; /* Eviter d'utiliser la propriété height */
+        margin: 4rem;
+        padding: 2rem;
+
+        /* Créer un bord arrondi de 10px */
+        border-radius: 1rem;
+    }
+
+    article{
+        width: 5rem;
+        height: 5rem;
+        background: black;
+        color: white;
+    }
+
+
+/*
+CCS3 translate()
+*/
+    section:first-child article{
+
+        -ms-transform: translate(2rem, 2rem); /* IE 9 */
+        -webkit-transform: translate(2rem, 2rem); /* Safari */
+        
+        /* La propriété transform en dernier */
+        transform: translate(2rem, 2rem);
+
+    }
+
+/*
+CCS3 rotate()
+*/
+    section:nth-child(2) article{
+
+        -ms-transform: rotate(45deg); /* IE 9 */
+        -webkit-transform: rotate(45deg); /* Safari */
+
+        transform: rotate(45deg);
+
+    }
+
+/*
+CCS3 skewX()
+*/
+    section:nth-child(3) article{
+
+        -ms-transform: skewX(45deg); /* IE 9 */
+        -webkit-transform: skewX(45deg); /* Safari */
+
+        transform: skewX(45deg);
+    }
+
+/*
+CCS3 skewY()
+*/
+    section:nth-child(4) article{
+
+        -ms-transform: skewY(45deg); /* IE 9 */
+        -webkit-transform: skewY(45deg); /* Safari */
+
+        transform: skewY(45deg);
+    }
+
+
+/*
+CSS3 scale()
+*/
+    section:nth-child(5) article{
+
+        -ms-transform: scale(3, 5); /* IE 9 */
+        -webkit-transform: scale(3, 5); /* Safari */
+    
+        transform: scale(3, 5);
+
+    }
+
+/*
+Transformation 3D
+*/
+
+/*
+CSS3 rotateX()
+*/
+    section:nth-child(6) article{
+        -webkit-transform: rotateX(45deg); /* Safari */
+        transform: rotateX(45deg) 
+    }
+
+/*
+CSS3 rotateY()
+*/
+    section:nth-child(7) article{
+        -webkit-transform: rotateY(45deg); /* Safari */
+        transform: rotateY(45deg) 
+    }
+
+/*
+CSS3 rotateZ()
+*/
+    section:nth-child(8) article{
+        -webkit-transform: rotateZ(45deg); /* Safari */
+        transform: rotateZ(45deg) 
+    }
+
+/*
+Créer un rond avec un carré
+*/
+    section:nth-child(9) article{
+
+        border-radius: 50%;
+
+    }
+
+/*
+Utilisation de translate() pour caler des balises
+*/
+    section:nth-child(10) article{
+
+        border: .1rem solid red;
+        display: inline-block;
+        vertical-align: top;        
+        margin: .5rem;
+        text-align: center;
+
+        /* Bloquer les enfants dans le parent */
+        position: relative;
+
+    }
+
+    section:nth-child(10) article p{
+        border: .1rem solid white;
+        width: 90%;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        -ms-transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+
+
+    }    
