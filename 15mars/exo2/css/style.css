@@ -335,9 +335,9 @@ Style main
 
                 /* Vidéo */
                     video{
-                        width: 130%;
+                        width: 100%;
                         height: auto;
-                    }
+                }
 
                 /* Présentation */
                 section:last-child article{
