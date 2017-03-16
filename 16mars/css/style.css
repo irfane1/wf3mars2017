@@ -1,0 +1,278 @@
+/* Importer FontAwesome */
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+
+/* Importer les polices */
+@import url('https://fonts.googleapis.com/css?family=Merriweather|Open+Sans:400,700');
+
+/*
+Style Reset
+*/
+    *{
+        /* Supprimer toutes les marges */
+        margin: 0;
+        padding: 0;
+
+        /* Intégrer les padding et les border dans les largeurs */
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    /* Ramener la valeur de 1rem à 10px */
+    html{
+        font-size: 62.5%;
+    }
+
+    body{
+        font-size: 1.5rem; /* => 15px */
+        font-family: 'Merriweather', serif;
+        text-align: center;
+    }
+
+    h1, h2, h3 {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 400;
+    }
+
+    h1 {
+        font-weight: 700;
+        line-height: 1em;
+        text-transform: uppercase;
+        margin-top: 2rem;
+        padding: 0 2rem 2rem 0;
+    }
+
+    h2{
+        font-size: 3rem;
+    }
+
+    
+
+    h3{
+        font-size: 2rem;
+        margin: 2rem auto 1rem auto;
+    }
+
+    a, figcaption{
+        text-decoration: none;
+
+        -webkit-transition: all .5s;
+        transition: all .5s;
+    }
+
+    img{
+        max-width: 100%;
+    }
+
+    header > a, main a{
+        font-size: 1.2rem;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+        padding: 1rem 1.5rem;
+        
+        -webkit-border-radius: 2rem;
+        border-radius: 2rem;
+
+    }
+
+
+/*
+Style Header
+*/
+    header {
+        background-image: url(../img/header.jpg);
+        background-position: center;
+        background-size: cover;
+        padding: 10rem 2rem 10rem 2rem;
+        color: white;
+    }
+
+    nav{
+        color: #222;
+        background: white;
+        text-transform: uppercase;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 2rem;
+        text-align: right;
+        font-size: 1.8rem;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    nav i{
+        font-size: 3rem;
+    }
+
+    nav > a{
+        color: #eb3812;
+        font-weight: bold;
+        position: absolute;
+        left: 2rem;
+    }
+
+    header a:last-child{
+        color: white;
+    }
+
+    .button0{
+        border: black;
+        background-color: white;
+        padding: 0.9rem 1rem;   
+        border-radius: 10%;             
+    }
+
+    .button1{
+        background-color: #F05F40;
+        padding: 1.5rem 3rem;        
+    }
+
+    header p{
+        color: rgba(255,255,255,.7);
+        padding: 5rem;
+    }
+
+    
+    
+    /*
+    Style Main
+    */
+
+    main .fa{
+        color: #F05F40;
+        font-size: 6rem;
+    }
+
+    
+
+     /* What you need */
+
+
+    section:first-child{
+        background: #F05F40;
+        padding: 10rem 0;        
+    }
+
+    section:first-child h2{
+            color: white;
+    }
+
+    .button2{
+        background-color: white;
+        padding: 1.5rem 3rem;        
+    }
+
+    section:first-child a{
+        background: white;
+        color: black;
+    }
+
+    section:first-child p{
+        color: rgba(255,255,255,.7);
+        font-size: 1.6rem;
+        margin-bottom: 3rem;
+    }
+
+    /* Services */
+    section:nth-child(2){
+        padding: 10rem;
+    }
+
+    section:nth-child(2) h2{
+        margin-bottom: 2rem;
+        color: #222;
+    }
+    
+    section:nth-child(2) article{
+        margin: 5rem auto 0;
+    }
+
+    section:nth-child(2) p{
+        color: #777;
+    }
+
+
+    /* Download */
+
+    section:last-child{
+        background: #222;
+        padding: 5rem 0;
+        clear: both;       
+    }
+
+    section:last-child h2{
+        color: white;
+        margin-bottom: 3rem;
+    }
+
+    section:last-child a{
+        color: #222;     
+    }
+
+    .button3{
+        background-color: white;
+        padding: 1.5rem 3rem;
+    }
+
+
+/*
+Style Footer
+*/
+
+footer{
+    padding: 10rem 1rem;
+}
+
+footer p{
+    font-size: 1.6rem;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+footer h2{
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+footer .fa{
+    font-size: 4.5rem;
+    display: block;
+}
+
+footer article{
+    margin-bottom: 2rem;
+}
+
+footer article a{
+    color: #333;
+}
+
+footer article:last-child a{
+    color: #F05F40;
+}
+
+
+
+
+
+
+ figure{
+    position: relative;
+    float: left;
+    line-height: 0;
+    display: inline-block;
+    width: 100%;
+    background: #F05F40;
+    opacity: 1;
+    
+}
+
+img{
+    width: 100%;
+    max-width: 100%;
+
+}
