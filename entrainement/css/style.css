@@ -1,0 +1,72 @@
+/*
+Style Reset
+*/
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+
+/*
+Style header
+*/
+
+h1{
+    color: white;
+}
+
+nav{
+    background-color: #2C3E50;
+}
+
+li a{
+    color: white;
+}
+
+body{
+    border: 1rem;
+}
+
+#moncadre {
+   border:5px solid black;
+   width:3000px;
+   height:3000px;
+}
+
+hr{
+    display: inline block;
+    height: 0.2rem;
+    width: 5rem;
+    padding: 1rem;
+    margin-bottom: 2rem;
+
+    background: red;
+}
+
+main section:nth-child(2){
+    display: inline-block;
+}
+
+ main section:nth-child(2) a {
+    font-size: 8rem;
+    color: red;
+}
+
+ main section:nth-child(2) p {
+    text-align: right;
+    padding: 3rem;
+}
+
+
+main section:nth-child(2) img{
+    height: 10rem;
+    width: 10rem;
+    float: right;
+    margin: 0 0 10px 10px;
+
+}

@@ -1,0 +1,153 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700|Suez+One');
+
+/*
+Style Reset
+*/
+
+    *{
+
+        /* Supprimer toutes les marges */
+        margin: 0;
+        padding: 0;
+
+        /* Intégrer le padding et le border dans la taille des boites */
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        
+    }
+
+    /* Configurer l'utilisation de 1rem = 10px */
+    html{
+        font-size: 62.5%;
+    }
+
+    body{
+        font-size: 1.5rem; /* => 15px */
+        font-weight: 400;
+        font-family: 'Roboto', sans-serif;
+        text-align: center;
+    }
+
+    h1{
+        font-size: 3rem;
+        font-weight: 400;
+        font-family: 'Suez One', serif;
+        padding-bottom: 2rem;
+    }
+
+    h1 span{
+        font-family: 'Roboto', sans-serif;
+        font-size: .5em; /* => la moitié de h1 */                
+        display: block;
+    }
+
+    a, header li{
+        text-decoration: none;
+
+        -webkit-transition: all .5s;
+        transition: all .5s;
+    }
+
+    /* Supprimer le style des listes (les puces) */
+    ul{
+        list-style: none;
+    }
+
+
+/*
+Style header
+*/
+    header{
+        color: white;
+        background: #22175b;
+        padding: 2rem;
+
+        /* Bloquer les enfants dans le parent */
+        position: relative;        
+    }
+
+    nav{
+        /*display: none;*/
+    }
+
+    header > a{
+        /* La balise A qui est enfant direct du header, ça aurait aussi pu être "h1 + a" */
+        font-size: 1.9rem;
+        background: white;
+        width: 4rem;
+        height: 4rem;
+        padding-top: 0.7rem;    
+        border: .2rem solid #22175b;
+        display: inline-block;
+
+        /* Positionner précisément la balise */
+        position: absolute;
+        top: 100%;
+        left: 50%;
+
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);         
+                 
+        
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+
+    }
+
+    header > a:hover{
+        color: white;
+        background: #22175b;
+        border-color: white;
+    }
+
+    /* Afficher la nav au survol de la balise A du header */
+    header > a:hover + nav {
+        display: block;
+    }
+
+    header li{
+        font-weight: 700;
+        background: rgba(255, 255, 255, 0.5);
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    header li:hover{
+        background: white;
+    }
+
+    header li:hover a{
+        color: #22175b;
+        border: .2rem solid white;   
+        
+    }
+
+     nav a{
+        color: white;
+    }
+
+
+/*
+Style footer
+*/
+    footer{
+        color: white;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: #22175b;
+        padding: 2rem;
+    }
+
+    footer a {
+        color: white;
+    }
+
+    /* Toutes les balises li du footer sauf la dernière */
+    footer li:not(:last-child){
+        display: inline-block;
+        margin-bottom: 1rem;
+        text-justify: center;
+    }
