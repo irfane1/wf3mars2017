@@ -1,0 +1,354 @@
+
+@import url('https://fonts.googleapis.com/css?family=Quicksand|Roboto:400,900');
+
+/*
+Style Reset
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1.5rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+h1, h2, nav li:first-child{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+}
+
+img{
+    max-width: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+
+main{
+    margin: 0 12rem;
+    
+}
+
+h1{
+    font-size: 5rem;
+}
+
+h2{
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+h2 span{
+    display: inline-block;
+    background-color: #0b0b2d;
+    padding: 1rem 1.5rem;
+}
+
+section{
+    padding: 2rem;
+}
+
+/* Style header */
+
+header{
+    background-image: url(../img/back.jpg);
+    background-position: center;
+    padding: 3rem 12rem;
+    color: white;
+}
+
+nav{
+    text-align: right;
+}
+
+li{
+    display: inline-block;
+    padding: 1.5rem;
+}
+
+ul{
+    position: relative;
+}
+
+nav li:first-child{
+    position: absolute;
+    left: 0;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+nav a{
+    color: white;
+}
+
+main p{
+    padding-top: 2rem;
+    font-family: 'Roboto';
+}
+
+
+/* Style main première section */
+
+
+
+main section:first-child img{
+    width: 10%;
+    float: left;
+    margin-right: 1.5rem;
+    vertical-align: middle;
+    overflow:hidden;
+    
+    -webkit-border-radius:50%;
+    border-radius:50%;
+
+}
+
+
+/* Style 2eme section */
+
+    section:nth-child(2) p, form, iframe{
+        display: inline-block;
+        width: 49%;
+
+        margin-right: .5rem;
+    }
+
+
+/* Style images */
+
+    figure{
+
+        /* Créer 4 colonnes */
+        display: inline-block;
+        width: 24%;
+        margin-right: .5rem;
+
+        /* Bloquer les enfants dans leur parent */
+        position: relative;        
+    }
+
+     figcaption{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 1rem;
+        text-transform: uppercase;
+        background: rgba(255, 255, 255, .7)
+    }
+
+
+/* Style formulaire */
+
+        input, textarea{
+            display: block;
+            margin-bottom: 1rem;
+            background: #ddd;
+            border: none;
+            width: 50%;
+        }
+
+        input{
+            padding-bottom: 2.5rem;
+
+        }
+
+        textarea{
+            padding: 2rem;
+        }
+
+        [type="submit"]{
+            background: #0b0b2d;
+            color: white;
+            padding: 0.5rem;
+        }
+
+        [placeholder]{
+            color: black;
+        }
+
+
+/* Style section formulaire et map */
+
+        main section:last-child article{
+            display: inline-block;
+            width: 49%;
+        }
+
+        input{
+            width: 100%;
+        }
+
+        iframe{
+            width: 100%;
+            min-height: 20rem;
+            border: none;
+
+
+        }
+
+/* Style footer */
+
+    footer{
+        background: #0b0b2d;
+        color: white;
+        padding: 2rem 12rem;
+    }
+
+
+    footer li{
+        display: inline-block;
+        padding: 1.5rem;
+    }
+
+    footer ul{
+        position: relative;
+        text-align: left;
+        
+    }
+
+    footer li:first-child{
+        position: absolute;
+        right: 0;
+        font-size: 3rem;
+    }
+
+    footer a{
+        color: white;
+    }
+
+
+@media screen and (max-width: 550px){
+
+    body{
+        text-align: center;
+    }
+
+    img{
+        float: 0;
+    }
+
+    /* Style nav */
+
+    nav{
+        display: block;
+        text-align: right;
+    }
+
+    li{
+        display: inline-block;
+        padding: 1.5rem;
+    }
+
+    ul{
+        position: relative;
+    }
+
+    nav li:first-child{
+        display: block;
+        
+        position: absolute;
+        left: 0;
+        font-size: 3rem;
+    }
+
+    nav a{
+        color: white;
+    }
+
+    h2 span{
+    display: block;
+    background-color: #0b0b2d;
+    padding: 1rem 1.5rem;
+    }
+
+
+
+    /* Style Main */
+
+    main{
+        margin: 0;
+    }
+
+    /* Style première section */
+
+    /* Style 2eme section */
+
+    main section:nth-child(2) p{
+        display: block;
+        width: 100%;
+    }
+
+
+    /* Style images */
+
+    figure{
+        width: 100%;
+
+        margin-bottom: 1rem; 
+    }
+
+     figcaption{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 1rem;
+        text-transform: uppercase;
+        background: rgba(255, 255, 255, .7)
+    }
+
+
+        /* Style section formulaire et map */
+
+        /* Style formulaire */
+
+        textarea, input:not([type="submit"]){
+            display: block;
+            margin-bottom: 1rem;
+            background: #ddd;
+            border: none;
+            width: 100%;
+            padding: 1rem 1.5rem;
+        }
+
+        [type="submit"]{
+            border: none;
+            background: #0b0b2d;
+            color: white;
+            padding: 1rem 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        textarea{
+            min-height: 20rem;
+        }
+
+        
+
+        iframe{
+            width: 100%;
+            min-height: 30rem;
+            border: none;
+        }
+
+
+        /* Style footer */
+        footer{
+            color: white;
+            background: #0b0b2d;
+            padding: 2rem;
+        }
+}
