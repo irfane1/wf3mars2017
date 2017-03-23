@@ -1,0 +1,143 @@
+/*
+Style Reset
+J'ai besoin de supprimer toutes les marges, d'intégrer le padding et les bordures danq la taille des boites et d'initialiser le REM
+*/
+    *{
+        margin: 0;
+        padding: 0;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    html{
+        font-size: 62.5%;
+    }
+
+    body{
+        font-size: 1.5rem; /* => 15px */
+    }
+
+    a{
+        text-decoration: none;
+    }
+
+    img{
+        max-width: 100%;
+    }
+
+
+/*
+Style header
+- Ajouter une marge intérieure de 20px
+- La nav ne dépasse pas les 850px
+- Les liens de la nav sont centrés sauf le premier qui est à gauche et le dernier qui est à droite
+*/
+    header{
+        padding: 2rem;
+        border: .1rem dashed black;
+        text-align: center;        
+    }
+
+    nav{
+        max-width: 85rem;
+        margin: auto;
+        border: 1rem double red;
+        position: relative;
+    }
+
+    li{
+        display: inline-block;
+        padding: 2rem;
+    }
+
+    li:first-child, li:last-child{
+        position: absolute;
+    }
+
+    li:first-child{
+        left: 0;
+    }
+
+    li:last-child{
+        right: 0;
+    }
+
+
+/*
+Style main
+- Le main ne dépasse pas 850px
+- Les différentes boites ont une marge en bas de 40px
+*/
+
+    main{
+        max-width: 85rem;
+        margin: 0 auto 4rem auto;
+    }
+
+    section:not(:last-child){
+        padding-bottom: 4rem;
+    }
+
+/*
+Style Portfolio
+- Le portfolio est sur 2 colonnes
+- Les figcaptions sont calés au-dessus de l'image avec un fond de couleur blanc à 50% d'opacité tout en haut à gauche et sur toute la largeur
+*/
+    figure {
+        position: relative;
+        display: inline-block;
+        width: 49%;
+    }
+
+    figcaption{
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        padding: 1rem;        
+        background: rgba(255, 255, 255, .5);
+    }
+
+/*
+Style Formulaire
+- Le textarea et le input (sauf le type submit) font toute la largeur du formulaire
+- Le type submit a une couleur de fond et une couleur de police
+*/
+    form{
+        width: 50%;
+        text-align: right;
+        display: inline-block;
+    }
+
+    input:not([type="submit"]), textarea{
+        width: 100%;
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    [type="submit"]{
+        background: red;
+        color: white;
+        border: none;
+        padding: 1rem;
+    }
+
+
+/*
+Méthode Desktop Down
+*/
+    @media screen and (max-width: 450px){
+
+        figure, form, article{
+            width: 100%;
+        }
+
+        li:first-child, li:last-child{
+            position: initial;
+        }
+
+        li{
+            padding: 0;
+        }
+
+    }

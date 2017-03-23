@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>23 mars Révisions HTML/CSS</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        
+        <!--
+            Faire un Header avec une nav contenant 4 items avec liens
+            Emmet : header>nav>ul>li*4>a
+        -->
+
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#">Accueil</a></li>
+                    <li><a href="#">A propos</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contacts</a></li>                    
+                </ul>
+            </nav>
+        </header>
+
+        <!--
+            Faire un main avec 4 sections contenant 1 h2 et 1 p
+            Emmet : main>section*4>h2+p
+        -->
+        <main>
+            <section>
+                <h2>Accueil</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At tempore ad omnis ratione, corrupti ipsum inventore impedit, ullam, nemo quae dolor, iusto sequi dolore ab delectus quibusdam natus pariatur explicabo!</p>
+            </section>
+            <section>
+                <h2>A propos</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, exercitationem! Dolores eveniet quaerat libero accusantium, atque nam est corporis, culpa dolorem mollitia, pariatur velit earum asperiores voluptatum. Accusantium, dolorem sit.</p>
+            </section>
+            <section>
+                <h2>Portfolio</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor nobis ducimus, repellendus, at ut atque hic. Repellat temporibus quasi, dolor enim recusandae mollitia! Quod aut aperiam nemo, delectus quaerat, repellendus?</p>
+                
+                <!--
+                    Afficher 4 images avec leur texte descriptif
+                    Emmet : figure*4>img+figcaption
+                -->
+                <figure>
+                    <img src="img/1.jpg" alt="Projet 1">
+                    <figcaption>Projet 1</figcaption>
+                </figure>
+                <figure>
+                    <img src="img/2.jpg" alt="Projet 2">
+                    <figcaption>Projet 2</figcaption>
+                </figure>
+                <figure>
+                    <img src="img/3.jpg" alt="Projet 3">
+                    <figcaption>Projet 3</figcaption>
+                </figure>
+                <figure>
+                    <img src="img/4.jpg" alt="Projet 4">
+                    <figcaption>Projet 4</figcaption>
+                </figure>
+
+            </section>
+            <section>
+                <h2>Contacts</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum perferendis expedita praesentium, vitae quia repellendus minus libero ea, quam sequi maiores itaque excepturi adipisci quo molestiae debitis earum dignissimos et.</p>
+           
+                <!--
+                    Faire un formulaire contenant 1 champ nom, 1 champ email, 1 champ message et 1 submit
+                    Emmet : form>input*2+textarea+input
+                -->
+                <form action="#">
+                    <input type="text" placeholder="Nom">
+                    <input type="email" placeholder="Email">
+                    <textarea placeholder="Message"></textarea>
+
+                    <input type="submit" value="Envoyer">
+                </form>
+
+            </section>
+        </main>
+
+        <footer>Under MIT Licence</footer>
+        
+    </body>
+</html>
