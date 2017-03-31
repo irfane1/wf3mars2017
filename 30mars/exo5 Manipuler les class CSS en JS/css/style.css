@@ -1,0 +1,19 @@
+h2{
+    -webkit-transition: all .5s;
+    transition: all .5s;    
+}
+    
+.error{
+    color: red;
+}
+
+.hidden{
+    display: none;
+}
+
+.move{
+    padding-left: 3rem;
+    font-size: 5rem;
+    color: blue;
+    -webkit-transform: rotateZ(360deg);    
+    transform: rotateZ(360deg);

@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css?family=Kreon:700|Quicksand:400,500');
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+/*
+Style Reset
+*/
+    *{
+        margin: 0;
+        padding: 0;
+
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+    }
+
+    html{
+        font-size: 62.5%;
+    }
+
+    body{
+        font-family: 'Quicksand', sans-serif;
+        font-weight: 400;
+        font-size: 1.5rem; /* => 15px */
+        text-align: center;
+    }
+
+    h1, h2, h3{
+        font-family: 'Kreon', serif;
+        font-weight: 700;
+    }
+
+
+
+/*
+Style header
+*/
+    header, footer{
+        color: white;
+        background-color: red;
+        padding: 2rem;
+        margin-bottom: 4rem;
+        position: relative;
+    }
+
+    .fa-bars{
+        font-size: 2rem;
+        padding-top: .6rem;
+        position: absolute;
+        background: red;
+        border: .3rem solid white;
+        width: 4rem;
+        height: 4rem;
+        left: 50%;
+        bottom: 0;
+        cursor: pointer;
+
+        -webkit-border-radius: 50%;
+        border-radius: 50%;        
+
+        -webkit-transform: translate(-50%, 50%);        
+        transform: translate(-50%, 50%);
+    }
+
+    h1 span{
+        font-family: 'Quicksand', sans-serif;
+        font-weight: 500;
+        font-size: .5em;
+        display: block;
+    }
+
+    nav ul{
+        display: none;
+    }
+
+    
+/*
+Style Main
+*/
+    h2{
+        color: red;
+    }
+
+    h2:after{
+        content: '';
+        display: block;
+        width: 5rem;
+        height: .2rem;
+        margin: 1rem auto 2rem auto;
+        border-bottom: .2rem dotted black;
+    }
+
+    h3{
+        margin-bottom: 1rem;
+    }
+
+
+
+
+/*
+Style Footer
+*/
+    footer{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        margin-bottom: 0;
+    }
