@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Exo3: Validation d'un formulaire en jQuery</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body>
+        <header>
+            <h1>Exo3: Validation d'un formulaire en jQuery</h1>        
+        </header>
+
+        <main>
+
+            <section>
+                <h2>Mon super projet</h2>
+
+                <img src="http://lorempixel.com/800/400/" alt="Mon super projet">
+
+                <h3>Ajouter un commentaire</h3>
+                <form action="addComment.php">
+
+                    <article>
+                        <label for="userName">Votre nom <b></b></label>
+                        <input type="text" name="userName" id="userName">
+                    </article>
+
+                    <article>
+                        <label for="userMessage">Votre message <b></b></label>
+                        <textarea name="userMessage" id="userMessage"></textarea>
+                    </article>
+
+                    <input type="submit" value="Commenter">
+
+                </form>
+
+            </section>
+
+            <section>
+                <h3>Liste des commentaires</h3>
+            </section>
+
+        </main>
+
+        <footer>Under MIT Licence</footer>
+
+        <!-- Intégrer jQuery AVANT le script de la page -->
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+        <!-- Intégrer le script de la page APRES jQuery -->
+        <script src="js/script.js"></script>
+
+    </body>
+</html>
