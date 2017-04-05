@@ -1,76 +1,99 @@
 // Attendre le chargement du DOM
 $(document).ready(function(){
 
-    /*
-    homePage
-    */
+    // Créer une fonction pour l'animation d'une compétence 
+    function mySkills( paramEq, paramWidth ){
 
+        // Animation des balises p des skills
+        $('h3 + ul').children('li').eq(paramEq).find('p').animate({
+            width: paramWidth
+        });
+
+    };
+
+    // Créer une fonction pour ouvrir la modal
+    function openModal(){
+
+        // Ouvrir la modal au clic sur les boutons
+        $('button').click(function(){
+            $('#modal').fadeIn();
+        });
+
+        // Fermer la modal au clic sur .fa-times
+        $('.fa-times').click(function(){
+            $('#modal').fadeOut()
+        });
+    
+    };
+
+
+    // Charger le contenu de home.html dans le main
+    $('main').load( 'views/home.html' );
+
+
+
+    /*
+    BurgerMenu
+    */
         // Burger menu : ouverture
-        $('.homePage h1 + a').click(function(evt){
+        $('h1 + a').click(function(evt){
 
             // Bloquer le comportement naturel de la balise A
             evt.preventDefault();
 
             // Appliquer la fonction slideToggle sur la nav
-            $('.homePage nav').slideToggle();
+            $('nav').slideToggle();
 
         });
 
         // Burger menu : navigation
-        $('.homePage nav a').click(function(evt){
+        $('nav a').click(function(evt){
 
             // Bloquer le comportement naturel de la balise A
             evt.preventDefault();
 
-            var linkToOpen = $(this).attr('href');
+            // Masquer le main
+            $('main').fadeOut();
+
+            var viewToLoad = $(this).attr('href');
             
             // Fermer le burger menu
-            $('.homePage nav').slideUp(function(){
+            $('nav').slideUp(function(){
 
-                // Changer de page
-                window.location = linkToOpen;
+                // Charger la bonne vue puis afficher le main (callBack)
+                $('main').load( 'views/' + viewToLoad, function(){
 
-            });
+                    $('main').fadeIn(function(){
 
-        });
+                        // Vérifier si l'utilisateur veut voir la page about.html
+                        if( viewToLoad == 'about.html' ){
 
+                            // Appeler la fonction mySkills
+                            mySkills( 0, '84%' );
+                            mySkills( 1, '25%' );
+                            mySkills( 2, '50%' );                  
+                        
+                        };
 
-    /*
-    aboutPage
-    */
-        // Capter le click sur le burger menu
-        $('.aboutPage h1 + a').click(function(evt){
+                        // Vérifier si l'utilisateur est sur la page portfolio.html
+                        if( viewToLoad == 'portfolio.html' ){
 
-            // Bloquer le comportement naturel de la balise A
-            evt.preventDefault();
+                            // Appeler la fonction pour ouvrir la modal
+                            openModal();                  
+                        
+                        };
+                        
+                    });
 
-            // Sélectionner la nav pour y appliquer une fonction animate
-            $('.aboutPage nav').animate({
-                left: '0'
-            });
-
-        });
-
-        // Burger menu : navigation
-        $('.homePage nav a').click(function(evt){
-
-            // Bloquer le comportement naturel de la balise A
-            evt.preventDefault();
-
-            var linkToOpen = $(this).attr('href');
-            
-            // Fermer le burger menu
-            $('.aboutPage nav').animate({
-                left: '-100%'
-            
-            }, function(){
-
-                // Changer de page
-                window.location = linkToOpen;
+                });
 
             });
 
         });
+
+
+        
+
 
 
 
