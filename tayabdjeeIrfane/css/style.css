@@ -1,0 +1,237 @@
+/* Importer icones fontawesome */
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+/* Importer polices de puis google fonts*/
+@import url('https://fonts.googleapis.com/css?family=Courgette');
+
+
+
+/*
+Style Reset
+*/
+    *{  
+        /* Supprimer les marges */
+        margin: 0;
+        padding: 0;
+
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    html{
+        font-size: 62.5%;
+    }
+
+    body{
+        color: #333;
+        font-size: 1.5rem; /* => 15px */
+        font-family: Arial, sans-serif;
+        background-image: url(../img/background.png);
+        
+    }
+
+    li{
+        display: inline-block;
+        margin-right: 1rem;
+    }
+
+    nav a{
+        text-transform: uppercase;
+        display: none;
+    }
+
+    a{
+        color: #FFF;
+        text-decoration: none;
+    }
+
+    img{
+        max-width: 100%;
+    }
+
+    h1, h2, h3{
+        font-family: 'Courgette', cursive;
+        font-style: italic;
+    }
+
+    h1{
+        color: #C55394;
+        text-align: center;
+        padding-bottom: 2rem;
+    }
+
+    h2{
+        padding-bottom: 1.5rem;
+    }
+
+    h2, h3{
+        color: #EB43A3;
+    }
+
+    .fa{
+        padding-right: 0.5rem;
+    }
+
+
+/*
+Style header
+*/
+    header{
+        color: #FFF;
+        padding: 2rem;
+        background-color: #C55394;
+    }
+
+    /* Style nav */
+
+    li:first-child{
+        font-size: 2.5rem;
+        display: block;
+        margin-bottom: 1rem;
+        font-style: italic;
+    }
+
+    a:hover{
+        border: 1rem solid #EB43A3;
+        background: #EB43A3: /* Attention à la fin de tes valeurs => ; */
+    }
+
+/*
+Style Main
+*/
+    main{
+        padding: 2rem;
+    }
+
+    h1 + img{
+        width: 40%;
+    }
+
+    main > article{
+            background: #FFF;
+            padding: 5rem;
+            box-shadow: 0.1rem 0.1rem 1.2rem #333;
+            
+            -webkit-border-radius: 1%;
+            border-radius: 1%;
+        }
+
+    section{
+        clear: both;
+        margin-bottom: 3rem;
+    }
+
+    section:first-child{
+        padding: 1rem;
+    }
+
+    figure{
+        position: relative;
+        margin-bottom: 1rem;
+    }
+
+    figcaption{
+        position: absolute;
+        bottom: 0;  
+        left: 0;
+        width: 100%;
+        padding: 1rem;
+        background: #333;
+        color: #FFF;
+        opacity: 0.8;
+        text-align: center;
+    }
+
+    iframe{
+        border: none;
+        width: 60%;
+        min-height: 50rem;
+        float: left;
+    }
+
+    input{
+        display: block;
+        margin: 1rem;
+    }
+
+    [type="email"]{
+        padding: 1rem 3rem 1rem 0.5rem;
+    }
+
+    [type="submit"]{
+        background: #C55394;
+        color: #FFF;
+        border: none;
+        padding: 1rem 1.5rem;
+
+        -webkit-border-radius: 10%;
+        border-radius: 10%;
+    }
+
+    iframe{
+        padding-bottom: 13rem;
+    }
+
+    
+
+
+/*
+Style Footer
+*/
+    footer{
+        background-color: #E577B5;
+        color: #FFF;
+        padding: 2rem;
+    }
+
+    aside{
+        text-align: right;
+    }
+
+
+
+
+/*
+Requête média
+Ecran d'une taille minimale de 850px
+*/
+    @media screen and (min-width:850px){
+
+        /* Style nav */
+
+        li:first-child{
+            display: inline-block;
+            position: absolute;
+        }
+
+        nav ul {
+            text-align: right;
+            position: relative;
+        }
+
+        nav li:first-child {
+            left: 0;
+            top: -.8rem;
+            margin: 0;
+        }
+
+        nav a{
+            display: inline-block;
+        }
+
+
+        /* Style main */
+
+        figure {
+            display: inline-block;
+            width: 24%;
+            margin-right: .5rem;
+        }
+
+        main{
+            padding: 10rem;
+        }
+       
+        
+
+    }
