@@ -1,0 +1,301 @@
+/*
+Reset
+*/
+    *{
+        margin: 0;
+        padding: 0;
+
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    html{
+        font-size: 62.5%;
+    }
+
+    body{
+        font-size: 1.5rem;
+        font-family: Arial, sans-serif;
+    }
+
+    h1 {
+        color: #0e385f;
+        font-size: 2rem;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+    }
+
+    h2{
+        font-size: 3rem;
+    }
+
+    h2 span {
+        display: block;
+        font-weight: 100;
+        font-size: .7em;
+        margin: 1rem 0 2rem 0;
+    }
+
+    img{
+        max-width: 100%;
+    }
+
+
+    legend {
+        font-size: 1.8rem;
+        padding: 2.5rem 0 1.5rem 0;
+    }
+
+    input{
+        padding: .5rem;
+        width: 100%;
+    }
+
+    [type="radio"]{
+        width: 2.5rem;
+    }
+
+    input.error, select.error{
+        border: .1rem solid red;
+    }
+
+    label.error{
+        color: red;
+    }
+
+    [type="radio"]:last-of-type{
+        margin-left: 2rem;
+    }
+
+    select {
+        border: .1rem solid #bdc7d8;
+        padding: .2rem;
+        height: 3rem;
+        padding: .5rem;
+    }
+    
+
+    a{
+        color: #365899;
+        text-decoration: none;
+    }
+
+    fieldset{
+        border: none;
+    }
+
+    fieldset:last-of-type{
+        margin: 2rem 0;
+        font-size: 2rem;
+    }
+
+
+/*
+Style Header
+*/
+    header section{
+        max-width: 95rem;
+        margin: auto;
+        position: relative;
+    }
+
+    header {
+        background-color: #3b5997;
+    }
+
+    header img {
+        width: 22rem;
+        margin-left: -2rem;
+    }
+
+    header img, header form{
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    header label, header input:not([type="submit"]){
+        display: block;
+        width: 90%;
+    }
+
+    header label{
+        color: white;
+        font-size: 1.2rem;
+        margin-bottom: .5rem;
+    }
+
+    header article{
+        float: left;
+        width: 39%
+    }
+
+    header article:last-of-type{
+        width: 20%;
+    }
+
+    header form{
+        width: 42rem;
+        position: absolute;
+        right: 0;
+        top: 1rem;
+    }
+
+    header a{
+        color: #9cb4d8;
+        text-decoration: none;
+        font-size: 1rem;
+    }
+
+    header [type="submit"] {
+        background-color: #4267b2;
+        border: .1rem solid #29487d;
+        color: white;
+
+        margin-top: 1.8rem;
+        padding: .7rem;
+    }
+
+    header aside {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, .5);
+
+        display: none;
+    }
+
+    header aside div {
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        background: white;
+        padding: 4rem;
+
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+
+    header aside a {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: #3b5997;
+        color: white;
+        padding: .5rem;
+    }
+
+/*
+Style main
+*/
+
+
+    main{
+        padding-top: 3rem;
+
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,d3d8e8+100 */
+        background: #ffffff; /* Old browsers */
+        background: -moz-linear-gradient(top,  #ffffff 0%, #d3d8e8 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top,  #ffffff 0%,#d3d8e8 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom,  #ffffff 0%,#d3d8e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#d3d8e8',GradientType=0 ); /* IE6-9 */
+    }
+
+    main section, footer ul, footer p{
+        max-width: 95rem;
+        margin: 2rem auto;
+    }
+
+    main article{
+        display: inline-block;
+        vertical-align: top;
+        width: 49%;
+    }
+
+    main article:last-of-type{
+        padding-left: 6rem;
+    }
+
+    main form div{
+        float: left;
+        width: 50%;
+        padding: 0 .5rem 0 0
+    }
+
+    main form div:last-of-type{
+        padding: 0 0 0 .5rem
+    }
+
+    main input {
+        font-size: 1.8rem;
+        border-radius: .5rem;
+        padding: 1rem;
+        border: .1rem solid #BDC7D3;
+        margin-bottom: 1rem;
+    }
+
+
+    fieldset + p {
+        color: #777;
+        font-size: 1.1rem;
+        width: 30rem;
+        margin-bottom: 2rem;
+    }
+
+    main [type="submit"]{
+        text-shadow: 0 1px 2px rgba(0,0,0,.5);
+        color: white;
+        font-weight: 700;
+        width: auto;
+        padding: 1rem 5rem;
+        margin-bottom: 10rem;
+
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#67ae55+0,578843+100 */
+        background: #67ae55; /* Old browsers */
+        background: -moz-linear-gradient(top,  #67ae55 0%, #578843 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top,  #67ae55 0%,#578843 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom,  #67ae55 0%,#578843 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#67ae55', endColorstr='#578843',GradientType=0 ); /* IE6-9 */
+
+
+        background-color: #69a74e;
+        box-shadow: inset 0 1px 1px #a4e388;
+        border-color: #3b6e22 #3b6e22 #2c5115;
+    }
+
+    select + a {
+        width: 13rem;
+        display: inline-block;
+        font-size: 1rem;
+        padding-left: 1rem;
+    }
+
+
+
+/*
+Style footer
+*/
+    footer{
+        font-size: 1.2rem;
+        color: #737373;
+    }
+
+    footer ul:first-of-type {
+        border-bottom: .1rem solid #d9d9d9;
+        padding-bottom: 1rem;
+    }
+
+    footer ul:first-of-type li{
+        margin-right: .5rem;
+    }
+
+    footer li{
+        display: inline-block;
+    }
+
+    footer ul:last-of-type li {
+        width: 16%;
+        vertical-align: top;
+        margin-bottom: .5rem;
+    }

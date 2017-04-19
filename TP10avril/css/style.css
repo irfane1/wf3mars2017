@@ -1,0 +1,268 @@
+/* Importer icones fontawesome */
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+/* Importer Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif|Roboto:400,700');
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+
+
+/*
+Style Reset
+*/
+    *{  
+        /* Supprimer les marges */
+        margin: 0;
+        padding: 0;
+
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    html{
+        font-size: 62.5%;
+    }
+
+    body{
+        font-size: 1.5rem; /* => 15px */           
+        text-align: center;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    li{
+        display: inline-block;
+        margin-right: 1rem;
+    }
+
+    a{
+        text-transform: uppercase;
+        font-weight: bold;
+        text-decoration: none;                
+    }
+
+    header a{
+        color: #FFF;        
+    }
+
+    img{
+        max-width: 100%;
+    }
+
+    h1,h2{
+        text-transform: uppercase;
+        margin: 2rem;
+        font-weight: bold;
+    }
+
+    h1{
+        font-size: 4rem;
+    }
+
+    header p{
+        font-size: 2.5rem;
+    }
+
+    p{
+        font-style: italic;
+    }
+
+    button{
+        background: #FFD700;
+        padding: 1.5rem 2.5rem;
+        border: none;
+
+        -webkit-border-radius: 0.2rem;
+        border-radius: 0.2rem;
+    }
+
+    
+
+
+/*
+Style header
+*/
+    header{
+        background-image: url(../img/header-bg.jpg);
+        color: #FFF;
+        padding: 2rem;
+        background-position: center;
+        background-size: cover;
+        width: auto;
+    }
+
+    /* Style nav */
+
+    header li:first-child{
+        font-size: 2.5rem;
+        display: block;
+        margin-bottom: 1rem;
+        font-style: italic;
+    }
+
+
+/*
+Style Main
+*/
+
+    main{
+        background: #F8F8FF;
+    }
+
+    /* Style figure */
+
+    figure{
+        position: relative;
+        margin-bottom: 1rem;
+    }
+
+    figcaption{
+        position: absolute;
+        bottom: 0;  
+        left: 0;
+        width: 100%;
+        padding: 2rem;
+        background: white;
+        color: black;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    span{
+        display: block;
+        font-style: italic;
+        font-weight: normal;
+    }
+
+    /* Style contact */
+
+    main section:nth-child(2){
+        background-image: url(../img/mapimage.png);        
+    }
+
+    form{
+        text-align: left;
+        margin: 4rem auto;
+        width: 49%;
+        display: inline-block;
+        position: relative;
+    }
+
+    form article:nth-last-child(){
+        width: 49%;
+        position: absolute;
+    }
+
+    ["submit"]{
+        background: #FFD700;
+        color: white;
+    }
+
+
+
+/*
+Style Footer
+*/
+
+    aside{
+        font-weight: bold;
+    }
+
+
+    /*
+Requête média
+Ecran d'une taille minimale de 850px
+*/
+    @media screen and (min-width:850px){
+
+        /* Style nav */
+
+        header li:first-child{
+            display: inline-block;
+            position: absolute;
+            font-family: 'Lobster', cursive;
+        }
+
+        header nav ul {
+            text-align: right;
+            position: relative;
+            padding-bottom: 10rem;
+        }
+
+        header nav li:first-child {
+            left: 0;
+            top: 0;
+            margin: 1rem;
+        }
+
+        header nav a{
+            display: inline-block;
+        }
+
+        
+        /* Style main */
+
+        figure {
+            display: inline-block;
+            width: 32%;
+            margin-right: .5rem;
+        }
+
+        main{
+            padding: 0 10rem;
+        }
+
+        
+        
+        /* Style contacts */
+
+        input, select{
+            padding: 1rem;
+            margin-bottom: 0.7rem;
+        }
+
+        textarea{
+            padding: 4.4rem;
+        }
+
+        main img:nth-child(2){
+            -ms-transform: rotate(-45deg); /* IE 9 */
+            -webkit-transform: rotate(-45deg); /* Chrome, Safari, Opera */
+            transform: rotate(-45deg);
+        }
+        
+        main article{
+            display: inline-block;
+        }
+    
+
+
+        /* Style Footer */
+
+        footer{
+            padding: 3rem;
+        }
+
+        footer a{
+            color: #FFD700;
+            text-transform: none;
+            margin-right: 1rem;
+        }
+
+        footer section{
+            display: inline-block;
+            width: 32%;
+        }
+
+        .fa{
+            font-size: 2rem;
+            background: black;
+            color: white;
+            border: 3rem;
+
+            -webkit-border-radius: 50%;            
+            border-radius: 50%;
+        }
+
+
+
+
+    }

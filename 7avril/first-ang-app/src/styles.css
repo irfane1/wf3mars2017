@@ -1,0 +1,434 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700|Suez+One');
+
+/*
+Style Reset
+*/
+
+    *{
+
+        /* Supprimer toutes les marges */
+        margin: 0;
+        padding: 0;
+
+        /* Intégrer le padding et le border dans la taille des boites */
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        
+    }
+
+    /* Configurer l'utilisation de 1rem = 10px */
+    html{
+        font-size: 62.5%;
+    }
+
+    body{
+        font-size: 1.5rem; /* => 15px */
+        font-weight: 400;
+        font-family: 'Roboto', sans-serif;
+        text-align: center;
+    }
+
+    h1{
+        font-size: 3rem;
+        font-weight: 400;
+        font-family: 'Suez One', serif;
+        padding-bottom: 2rem;
+    }
+
+    h2{
+        font-family: 'Suez One', serif;
+        font-weight: 400;
+        margin-bottom: 1rem;        
+    }
+
+    h1 span{
+        font-family: 'Roboto', sans-serif;
+        font-size: .5em; /* => la moitié de h1 */                
+        display: block;
+    }
+
+    a, header li{
+        text-decoration: none;
+
+        -webkit-transition: all .5s;
+        transition: all .5s;
+    }
+
+    /* Supprimer le style des listes (les puces) */
+    ul{
+        list-style: none;
+    }
+
+    img{
+        max-width: 100%;
+    }
+
+
+/*
+Style header
+*/
+    header{
+        color: white;
+        background: #22175b;
+        padding: 2rem;
+
+        /* Bloquer les enfants dans le parent */
+        position: relative;        
+    }
+
+    nav{
+        display: none;
+    }
+
+    .aboutPage nav {
+        position: fixed;
+        z-index: 10000;
+        top: 0;
+        left: -100%;
+        height: 100%;
+        width: 20rem;
+        padding: 2rem;        
+        background: black;
+
+        display: block;
+    }
+
+    header > a{
+        /* La balise A qui est enfant direct du header, ça aurait aussi pu être "h1 + a" */
+        font-size: 1.9rem;
+        background: white;
+        width: 4rem;
+        height: 4rem;
+        padding-top: 0.7rem;    
+        border: .2rem solid #22175b;
+        display: inline-block;
+        color: #22175b;
+
+        /* Positionner précisément la balise */
+        position: absolute;
+        top: 100%;
+        left: 50%;
+
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);         
+                 
+        
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+
+    }
+
+    header > a:hover{
+        color: white;
+        background: #22175b;
+        border-color: white;
+    }
+
+    header li{
+        font-weight: 700;
+        background: rgba(255, 255, 255, 0.5);
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    header li:hover{
+        background: white;
+    }
+
+    header li:hover a{
+        color: #22175b;
+        border: .2rem solid white;   
+        
+    }
+
+     nav a{
+        color: white;
+    }
+
+
+/*
+Style Main
+*/
+    main{
+        padding: 4rem 2rem 10rem 2rem;
+    }
+
+    /* Style About */
+    [src="img/profil.jpg"]{
+        width: 12rem;
+        margin-bottom: 2rem;
+        border: .4rem solid white;
+
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+
+        -webkit-box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2); 
+    }
+
+    [src="img/profil.jpg"] + p{
+        margin-bottom: 2rem;
+    }
+
+    /* La balise ul qui est placée juste après la balise h3 */
+    h3 + ul{
+        text-align: left;
+        margin: 2rem auto;
+    }
+
+    h3 + ul li{
+        background: red;
+        padding: .1rem;
+        margin-bottom: 1rem;
+        position: relative;
+    }
+
+    h3 + ul p{
+        background: white;
+        padding: 1rem;
+        min-height: 3.5rem;
+
+        /* Pour l'animation */
+        width: 0;
+    }
+
+    h3 + ul span{
+        position: absolute;
+    }
+
+
+    /* Style Portfolio */
+        figure{
+            position: relative;
+        }
+
+        figcaption{
+            position: absolute;
+            width: 20rem;
+            background: white;
+            padding: 1rem 2rem;
+            top: 50%;
+            left: 50%;
+
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+
+            -webkit-border-top-left-radius: 1rem;
+            border-top-left-radius: 1rem;          
+        }
+
+        figcaption button{
+            position: absolute;
+            left: 0;
+            top: 100%;
+            width: 100%;
+            border: 0;
+            padding: 1rem;
+
+            -webkit-border-bottom-right-radius: 1rem;            
+            border-bottom-right-radius: 1rem;
+        }
+
+        #modal {
+            position: fixed;
+            z-index: 2000;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, .7);
+            width: 100%;
+            height: 100%;
+
+            /* Pour l'animation */
+            display: none;
+        }
+
+        #modal article{
+            text-align: left;            
+            background: white;
+            max-width: 35rem;
+            margin: 5rem auto;
+            padding: 2rem;
+        }
+        
+
+
+    /* Style contacts */
+        form{
+            text-align: left;
+            margin: 4rem auto;
+        }
+
+        select{
+            margin: 1rem auto 3rem auto;
+        }
+
+        textarea{
+            min-height: 20rem;
+        }
+
+        textarea, input, label{
+            display: block;
+            width: 100%;
+            border: none;
+            padding: 1rem;
+        }
+
+        input{
+            position: relative;
+            z-index: 2000;
+            background-color: transparent;
+        }
+
+        [type="checkbox"]{
+            display: inline-block;
+            width: auto;
+            margin-top: 3rem;
+        }
+
+        textarea, input:not([type="submit"]){
+            border-bottom: .1rem solid #22175b;      
+            margin-bottom: 2rem;             
+        }
+
+        form article{
+            position: relative;
+        }
+
+        label{
+            padding: 0;
+            font-weight: 700;        
+            
+            -webkit-transition: all .5s;                
+            transition: all .5s;    
+        }
+
+        label:not([for="userSubject"]){
+            position: absolute;
+            top: .5rem;
+        }
+
+        label.openedLabel {
+            top: -1.5rem;
+            font-size: 1.2rem;
+            color: grey;
+        }
+
+        input[type="submit"] {
+            background: #22175b;
+            color: white;
+            width: 24%;
+            font-weight: bold;
+            margin: 1.5rem auto;
+        }
+
+        form b{
+            font-size: .7em;
+            text-transform: uppercase;
+            color: red;
+
+            -webkit-transition: opacity .5s;            
+            transition: opacity .5s;
+        }
+
+        .hideError b{
+            opacity: 0;
+        }
+
+/*
+Style footer
+*/
+    footer{
+        color: white;
+        position: fixed;
+        z-index: 1000;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: #22175b;
+        padding: 2rem;
+    }
+
+    footer a {
+        color: white;
+    }
+
+    /* Toutes les balises li du footer sauf la dernière */
+    footer li:not(:last-child){
+        display: inline-block;
+        margin-bottom: 1rem;
+    }
+
+
+ /*
+ Requêtes media
+ */
+    /* Ecran d'une taille minimale de 400px */
+    @media screen and (min-width: 400px) {
+
+        /* Style portfolio */
+            .portfolioPage article{
+
+                /* Passer en 2 colonnes */
+                display: inline-block;
+                width: 49%;
+
+                /* Gérer les paddings */
+                padding: 0 1rem 0 0;
+
+            }
+
+            /* Sélectionner toutes les 2 balises à partir de la 2ème */
+            .portfolioPage article:nth-child( 2n + 2 ){
+                padding: 0 0 0 1rem;
+            }
+
+    }
+
+    /* Ecran d'une taille minimale de 750px */
+    @media screen and (min-width: 750px) {
+
+        /* Style reset */
+            main, h1, nav{
+                max-width: 85rem;
+                /* Centrer dans la largeur */
+                margin: auto;
+            }
+
+            h1{
+                font-size: 4rem;
+            }
+
+            h1 span{
+                display: initial;
+            }
+
+        /* Style header */
+
+            header{
+                text-align: left;
+                text-indent: 1rem;                
+            }
+
+            /* Masquer le burger */
+            header > a{
+                display: none;
+            }
+
+            /* Afficher la nav */
+            nav{
+                display: block;
+            }
+
+            /* Aligner les objets de la nav */
+            nav li{
+                display: inline-block;
+                text-indent: 0;                
+            }
+    
+    }
+
+    

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Evaluation blanche</title>
+
+        <link rel="stylesheet" href="css/style.css">
+
+    </head>
+    <body>
+
+        <header>
+
+            <nav>
+                <ul>
+                    <li><a href="#">Start Bootstrap</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Contact</a></li>        
+                </ul>                             
+            </nav>
+
+            <p>Welcome To Our Studio!</p>
+            <h1>It's nice to meet you</h1>
+
+            <button><a href="#">Tell me more</a></button>
+        </header>
+
+        <main>
+
+            <section>
+                <h2>Portfolio</h2>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+
+                <figure>
+                    <img src="img/projet1.png" alt="Projet 1">
+                    <figcaption>Round Icons <span>Graphic Design</span></figcaption>
+                </figure>
+
+                <figure>
+                    <img src="img/projet2.png" alt="Projet 2">
+                    <figcaption>Startup Framework <span>Website Design</span></figcaption>
+                </figure>
+
+                <figure>
+                    <img src="img/projet3.png" alt="Projet 3">
+                    <figcaption>Treehouse <span>Website Design</span></figcaption>
+                </figure>
+    
+            </section>
+
+            <section>
+                <h2>Contact us</h2>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+
+                <form action="contact.php">
+
+                    <article>
+                        <label for="userName"><b></b></label>
+                        <input type="text" id="userName" placeholder="Your name">
+                    </article>
+
+                    <article>
+                        <label for="userSubject"><b></b></label>
+                    
+                        <select id="userSubject" name="subject" >
+                            <option value="null">- Sélectionner -</option>
+                            <option value="contact">Prise de contact</option>
+                            <option value="rdv">Prise de rendez-vous</option>
+                            <option value="devis">Demande de devis</option>
+                        </select>
+                    </article>
+
+                    <article>
+                        <label for="userPhone"><b></b></label>
+                        <input type="text" id="userPhone" placeholder="Your phone">
+                    </article>
+
+                    <article>
+                        <label for="userMessage"><b></b></label>
+                        <textarea id="userMessage" placeholder="Your message"></textarea>
+
+                    </article>
+
+                    <input type="submit" value="Send message">
+                    
+                </form>
+                           
+            </section>
+        </main>
+
+        <footer>
+            <section>
+                <aside>Copyright &copy Your Website 2016</aside>
+            </section>
+
+            <section>
+                <ul>
+                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>                    
+                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                </ul>
+            </section>
+
+            <section>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of use</a></li>                    
+                </ul>
+            </section>
+        </footer>
+        
+        <!--
+            Intégrer jQuery AVANT le script de la page
+        -->
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+        <!--
+            Intégrer le script de la page APRES jQuery
+        -->
+        <script src="js/script.js"></script>
+
+    </body>
+</html>

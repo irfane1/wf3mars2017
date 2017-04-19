@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css?family=Merienda:400,700|Roboto:400,700');
+
+/*
+Style Reset
+*/
+    *{
+        padding: 0;
+        margin: 0;
+
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    html{
+        font-size: 62.5%;
+    }
+
+    body{
+        font-size: 1.5rem;
+        text-align: center;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    img{
+        max-width: 100%;
+    }
+
+    a{
+        color: white;
+        font-family: 'Merienda', cursive;
+        text-decoration: none;
+    }
+
+
+/*
+Style Header
+*/
+    header{
+        background-image: url(../img/background.jpg);
+        padding-bottom: 5rem;
+    }
+
+    nav{
+        background-color: #061339;
+        padding: 2rem;
+        position: relative;
+    }
+
+    a{
+        position: absolute;
+        left: 1%;
+        top: 27%;
+    }
+
+    h1{
+        color: #FFF;
+        font-family: 'Merienda', cursive;    
+        font-weight: 700;
+        text-shadow: 0.3rem 0 black;    
+        padding-top: 4rem;
+    }
+
+
+/*
+Style Main
+*/
+    main{
+        padding: 1rem auto;
+    }
+
+    /* Section formulaire */
+
+    section:first-child{
+        margin: 3rem 1.5rem;
+    }
+
+    input, textarea, select{
+        width: 100%;
+    }
+
+    textarea{
+        min-height: 20rem;
+    }
+
+    [type="submit"]{
+        background-color: limegreen;
+        color: white;
+        border: none;
+        padding: 1rem;
+    }
+
+    .error{
+        border: .2rem solid red;
+    }
+
+    /* Section 2 */
+
+    section:last-child{
+        background-color: rgb(222, 222, 222) ;
+        padding: 1rem;
+    }
+
+    h2{
+        color: #2F4073;
+        font-family: 'Merienda', cursive;    
+        padding: 1.5rem 0;   
+    }
+
+    h2:last-child{
+        text-align: left;
+    }
+
+    p{
+        text-align: left;
+    }
+
+    img{
+        background-color: #7885A5;
+    }
+
+    section:last-child:hover img{
+        background-color: #061339;
+    }
+
+
+/*
+Style Footer
+*/
+
+    footer{
+        background-color: #061339;
+        padding: 1rem;
+        position: relative;
+    }
+
+    aside{
+        color: white;
+        position: absolute;
+        right: 1%;
+        bottom: 27%;
+        font-size: 1rem;
+    }
+
+
+
+/*
+Pour les écrans d'une taille minimale de 550px, mettre les sections du main sur deux colonnes
+*/
+@media screen and (min-width: 850px){
+
+    main{ 
+        margin: auto;
+    }
+
+    nav{
+        padding: 3rem;
+    }
+
+    a{
+        margin-left: 25%;
+    }
+
+    footer{
+        padding: 2rem;
+    }
+
+
+
+    /* Style section 1 */
+
+     section:first-child{
+         margin-bottom: 6rem;
+     }
+
+
+    section:first-child img, form{
+        display: inline-block;
+        width: 49%;
+        vertical-align: top;
+    }
+
+
+
+    /* Style section 2 */    
+
+    section:last-child{
+        margin: auto;
+    }
+
+    section:last-child img, section:last-child p{
+        display: inline-block;
+        width: 49%;
+        vertical-align: top;
+    }
+
+    img:first-child{
+        float: right;
+    }
+
+
+
+}

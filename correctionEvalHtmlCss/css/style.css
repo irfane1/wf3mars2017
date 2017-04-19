@@ -1,0 +1,374 @@
+@import 'https://fonts.googleapis.com/css?family=Courgette';
+
+/* 
+Reset
+*/
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+html{
+	font-size: 62.5%;
+}
+
+body{
+	font-family: Arial, sans-serif;
+	font-size: 1.5rem;
+	text-align: center;
+	background-image: url(../img/background.png);
+
+		/* EN PLUS : Effet parallax */
+		background-attachment: fixed;
+}
+
+h1, h2, h3, li:first-child a {
+	font-family: 'Courgette', cursive;
+	color: #EB43A3;
+	margin: 3rem auto;
+}
+
+h1 {
+    color: #C55394;
+    margin: 5rem auto 0 auto;
+}
+
+p{
+	margin-bottom: 2rem;
+}
+
+a{
+	text-decoration: none;
+	color: white;
+	padding: 1rem;
+
+	/* Faire une transition entre les deux états des balises A */
+	-webkit-transition: all .5s;
+	transition: all .5s;
+}
+
+a:hover{
+	background-color: #EB43A3;
+}
+
+img{
+	width: 100%;
+}
+
+iframe {
+	width: 100%;
+	min-height: 25rem;
+	border: 0;
+}
+
+
+
+/* 
+Header
+*/
+
+header{
+	background-image: url(../img/rainbow.png);
+	background-size: 90%;
+	background-position: bottom;
+	background-repeat: no-repeat;
+	padding-bottom: 5rem;
+
+	/* Pour la NAV bloquée en haut */
+	padding-top: 5rem;
+}
+
+nav{
+	background-color: #C55394;
+	margin-bottom: 5rem;
+
+		/*
+		EN PLUS : Bloquer la NAV en haut du site
+		*/
+		position: fixed;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		width: 100%;
+}
+
+
+li:not(:first-child){
+	display: none;
+}
+
+li:first-child a {
+	font-size: 2rem;
+	color: white;
+}
+
+/* Supprimer l'effet sur la balise A du premier LI */
+li:first-child a:hover{
+	background-color: transparent;
+}
+
+
+
+/* 
+Main
+*/
+main{
+	padding: 2rem;
+	background-color: white;
+	margin: 0 2rem 3rem 2rem;
+
+	/* 
+	Ne pas oublier les préfixes pour être sûr que 
+	les propriétés s'affichent sur tous les navigateurs 
+	*/
+	-webkit-box-shadow: 0 0 1rem rgba(0,0,0,.5);
+	-moz-box-shadow: 0 0 1rem rgba(0,0,0,.5);
+	box-shadow: 0 0 1rem rgba(0,0,0,.5);
+
+	-webkit-border-radius: 1rem;
+	border-radius: 1rem;
+}
+
+
+
+/* 
+Section "Le Principe"
+*/
+section:first-of-type h2{
+	margin-top: 1rem;
+}
+
+ul{
+	padding: 1rem;
+}
+
+
+
+/* 
+Section "Nos Licornes"
+*/	
+section:nth-child(2) figure {
+	/* Placer l'ARTICLE en RELATIVE pour bloquer les enfants */
+ 	position: relative;
+}
+
+section:nth-child(2) figure:not(:last-of-type), section:nth-child(3) iframe{
+	margin-bottom: 3rem;
+}
+
+section:nth-child(2) figure figcaption {
+	color: white;
+	position: absolute;
+	margin-bottom: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding: 1rem 0;
+	background-color: rgba(0,0,0,.7);
+}
+
+
+
+/*
+Section "Nous Contacter"
+*/
+section:last-child p{
+	margin-bottom: .5rem;
+}
+form{
+	margin-top: 2rem;
+}
+
+input{
+	display: block;
+	width: 98%;
+	padding: .5rem 0;
+	text-indent: .5rem;
+}
+
+/*
+Sélectionner une balise par son attribuit
+*/
+[type="submit"]{
+	background-color: #C55394;
+	color: white;
+	margin-top: 1rem;
+	border: none;
+	width: 100%;
+	border: .1rem solid #C55394;
+}
+
+
+
+/* 
+Footer
+*/
+footer {
+	background-color: #E577B5;
+	color: white;
+	font-size: 1rem;
+	padding: 1rem;
+}
+
+
+/*
+EN PLUS : Animations
+*/
+@-webkit-keyframes animTitle{
+	from {left:0; opacity: 0}
+	to {left:50%; opacity: 1}
+}
+
+@keyframes animTitle{
+	from {left:0; opacity: 0}
+	to {left:50%; opacity: 1}
+}
+
+
+
+/* 
+Responsive Design
+*/
+@media screen and (min-width:950px) {
+	
+
+	/*
+	Reset
+	*/ 
+	h3{
+		margin: 3rem auto 1rem auto;
+	}
+
+	ul, main{
+		max-width: 95rem;
+		margin: auto;
+		position: relative;
+	}
+
+	li:not(:first-child), li {
+		display: inline-block;
+	}
+
+	li:not(:first-child) a{
+		padding: 1.8rem;
+	}
+
+	li:first-child{
+		position: absolute;
+		left: 0;
+		top: .5rem;
+	}
+	
+	/*
+	Header
+	*/
+	header {
+	    background-size: 35%;
+	}
+
+	nav {
+	    margin-bottom: 10rem;
+	    text-align: right;
+	    padding: .8rem 0;
+	}
+
+	/*
+	EN PLUS : Animation sur le titre
+	*/
+
+	header {
+	    padding-bottom: 12rem;
+
+	    /* Pour la NAV bloquée en haut */
+	    padding-top: 8rem;
+	}
+
+	h1{
+		position: relative;
+	}
+
+	h1 span{
+		display: block;
+		left: 50%;
+		
+		-webkit-transform: translate(-50%);
+		transform: translate(-50%);
+
+		position: absolute;
+		animation-name: animTitle;
+		animation-duration: 1s;
+	}
+	
+
+
+	/*
+	Section "Le Principe"
+	*/
+	section:first-of-type, section:last-of-type, h2{
+	text-align: left;
+	}
+	
+
+	/*
+	Section "Nos Licornes"
+	*/
+	section:nth-child(2) figure{
+		display: inline-block;
+		width: 23.8%;
+	}
+
+	section:nth-child(2) figure:not(:first-of-type){
+		margin-left: 1rem;
+	}
+
+			/* 
+			EN PLUS : Ajouter un effet sur les images quand la souris passe au-dessus 
+			*/
+			article img{
+				-webkit-transition: all .5s;
+				transition: all .5s;
+			}
+
+			article img:hover{
+				-webkit-filter: blur(.5rem); /* Chrome, Safari, Opera */
+				filter: blur(.5rem);
+			}
+
+
+
+	/*
+	Section "Nous Contacter"
+	*/
+	section:last-child iframe, section:last-child article{
+		display: inline-block;
+		vertical-align: top;
+		width: 48%;
+	}
+
+	section:last-child article {
+	    padding-left: 2rem;
+	}
+
+	h3:first-of-type{
+		margin-top: 0;
+	}
+	
+	iframe{
+		min-height: 30rem;
+	}
+
+	input, [type="submit"] {
+	    width: auto;
+	    min-width: 8rem;
+	}
+
+
+
+	/*
+	Footer
+	*/
+	footer {
+	    margin-top: 3rem;
+	}
+}

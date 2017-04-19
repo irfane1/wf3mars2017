@@ -1,0 +1,36 @@
+/*
+Style Reset
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1.5rem;
+}
+
+
+
+/*
+Style header
+*/
+
+header{
+    background-color: #3b5997;
+    padding: 3rem;
+}
+
+input{
+    padding: 1rem;
+}
+
+[type="submit"]{
+    background: #4267b2;
+    color: white;
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<title>MyUnicorn</title>
+
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<header>
+			<nav>
+				<ul>
+					<li><a href="index.html">MyUnicorn</a></li>
+					<li><a href="#sectionPrincipe">Le principe</a></li>
+					<li><a href="#sectionLicornes">Nos licornes</a></li>
+					<li><a href="#sectionNousTrouver">Nous trouver</a></li>
+				</ul>
+			</nav>
+
+			<!-- 
+				EN PLUS : La balise SPAN est ajoutée pour faire une animation 
+			-->
+			<h1><span>Un jour, une licorne</span></h1>
+		</header>
+
+		<main>
+			<section id="sectionPrincipe">
+				<h2><i class="fa fa-star-o" aria-hidden="true"></i> Le principe</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dictum dapibus ante, eu aliquam ante euismod eleifend. Ut malesuada augue ut luctus pellentesque. Aenean id varius ipsum. Nunc malesuada ex ut ipsum interdum vestibulum. Integer facilisis finibus orci, sit amet pretium diam placerat vitae. Nunc auctor tincidunt mollis. Nullam quis turpis sed lorem elementum semper eget semper risus. In nec mauris aliquam, congue metus euismod, cursus leo. Vivamus laoreet commodo leo, ut cursus justo blandit in. Aenean pretium mi a auctor pulvinar. Mauris sodales sollicitudin sodales. Sed mollis sed lectus id facilisis. Quisque pharetra a purus eget porttitor. Proin rhoncus risus non mauris iaculis sodales. Pellentesque euismod dui erat, non sodales ipsum sollicitudin sed.</p>
+				<p>Donec nisi eros, luctus id pretium eget, consequat elementum risus. Fusce eleifend lacinia orci eu iaculis. Vestibulum vestibulum justo quis commodo congue. Aliquam purus leo, dictum in nisl at, pellentesque bibendum mi. Nulla convallis mi eget nisl convallis dictum. Vestibulum a massa lacus. Aenean quis enim diam.</p>
+			</section>
+
+			<section id="sectionLicornes">
+				<h2><i class="fa fa-star-o" aria-hidden="true"></i> Nos licornes</h2>
+
+				<!--
+					Chaque image est placée dans une figure pour pouvoir manipuler le bloc entier 
+					cf. style.css:151 à style.css:170.
+					NB : la balise figure est à utiliser obligatoirement avec une balise figcaption.
+				-->
+				<figure>
+					<img src="img/unicorns/photo1.jpg" alt="Lulu Confetty">
+					<figcaption>Lulu Confetty</figcaption>
+				</figure>
+
+				<figure>
+					<img src="img/unicorns/photo2.jpg" alt="Lapillon Magik">
+					<figcaption>Lapillon Magik</figcaption>
+				</figure>
+
+				<figure>
+					<img src="img/unicorns/photo3.jpg" alt="El Ninjacorn">
+					<figcaption>El Ninjacorn</figcaption>
+				</figure>
+
+				<figure>
+					<img src="img/unicorns/photo4.jpg" alt="Sweety Candy">
+					<figcaption>Sweety Candy</figcaption>
+				</figure>
+			</section>
+
+			<section id="sectionNousTrouver">
+				<h2><i class="fa fa-star-o" aria-hidden="true"></i> Nous trouver</h2>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4814.724569713565!2d2.352713445131344!3d48.85349766515014!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb2bbd365849898f2!2sWebforce3!5e0!3m2!1sfr!2sfr!4v1473766384446"></iframe>
+
+				<article>
+					<h3>Notre élevage de licornes est situé au :</h3>
+					<p>18 Rue Geoffroy l'Asnier</p>
+					<p>75004 Paris </p>
+					<p>01.23.35.67.89</p>
+					
+					<h3>Newsletter</h3>
+					<p>Abonnez-vous simplement à notre newsletter mensuelle !</p>
+					<form action="submitForm.php">
+						<input type="email" placeholder="votre@email.fr" required="required">
+						<input type="submit" value="Valider">
+					</form>
+				</article>
+			</section>
+		</main>
+
+		<!--
+			Quand il n'y à qu'une seule ligne dans le footer, pas besoin d'ajouter de balise en plus.
+		-->
+		<footer>2016 &copy; Webforce3</footer>
+	</body>
+</html>
