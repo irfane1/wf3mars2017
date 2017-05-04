@@ -40,10 +40,10 @@ if ($_POST) {  // équivalent à !empty($_POST) car si le $_POST est rempli, il 
 
     // ici il faudrait mettre les contrôles sur le formulaire
 
-    $photo_bdd = "";  // la photo subit un traitement spécifique en BDD. Cette variable contiendra son chemin d'accès
+    $photo_bdd = '';  // la photo subit un traitement spécifique en BDD. Cette variable contiendra son chemin d'accès
 
     // 9- Modification de la photo (suite)
-    if(isset($_GET['action']) && $_GET['action'] == 'modification') {
+    if (isset($_GET['action']) && $_GET['action'] == 'modification') {
         // si je suis en modification, je mets en base la photo du champ hidden photo_actuelle du formulaire
         $photo_bdd = $_POST['photo_actuelle'];
     }
@@ -192,7 +192,7 @@ if (isset($_GET['action']) && ($_GET['action'] == 'ajout' || $_GET['action'] == 
             // Afficher la photo actuelle
             echo'<img src="'. $produit_actuel['photo'] .'" width="90" height="90"><br>';
             // Mettre le chemin de la photo dans un champ caché pour l'enregistrer en base
-            echo '<input type="hidden" name="photo_actuel" value="'. $produit_actuel['photo'] .'">';  // ce champ renseigne le $_POST['photo_actuelle'] qui va en base quand on soumet le formulaire de modification. Si on ne remplit pas le formulaire ici, le champ photo de la base est remplacé par un vide, ce qui efface le chemin de la photo
+            echo '<input type="hidden" name="photo_actuelle" value="'. $produit_actuel['photo'] .'">';  // ce champ renseigne le $_POST['photo_actuelle'] qui va en base quand on soumet le formulaire de modification. Si on ne remplit pas le formulaire ici, le champ photo de la base est remplacé par un vide, ce qui efface le chemin de la photo
         }
     ?>
 
