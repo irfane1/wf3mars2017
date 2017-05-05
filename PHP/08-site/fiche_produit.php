@@ -75,6 +75,27 @@ if (isset($_GET['id_produit'])) {  // si existe l'indice id_produit dans l'URL
     exit();
 }
 
+// Affichage d'une fenêtre modale pour confirmer l'ajout du produit au panier
+if (isset($_GET['statut_produit']) && $_GET['statut_produit'] == 'ajoute') {
+
+    // On met dans une variable le HTML de la fenêtre modale pour l'afficher ensuite
+    $contenu_gauche = '<div class="modal fade" id="myModal" role="dialog">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Le produit a bien été ajouté au panier</h4>
+                                    </div>
+                                    
+                                    <div class="modal-body">        
+                                        <p><a href="panier.php">Voir le panier</a></p>    
+                                        <p><a href="boutique.php">Continuer ses achats</a></p>                        
+                                    </div>
+
+                                </div>                            
+                            </div>    
+                      </div>';
+}
+
 // -----------------
 // Exercice
 // -----------------
@@ -103,6 +124,8 @@ while($affichage = $requete->fetch(PDO::FETCH_ASSOC)) {
 
 
 
+
+
 // ---------------- AFFICHAGE -----------------------
 require_once('inc/haut.inc.php');
 echo $contenu_gauche;  // le contenu gauche recevra le popup de confirmation d'ajout au panier
@@ -120,6 +143,12 @@ echo $contenu_gauche;  // le contenu gauche recevra le popup de confirmation d'a
 
     </div>
 
+    <script>
+        $(document).ready(function() {
+            // affiche la fenêtre modale
+            $("#myModal").modal("show");
+        });
+    </script>
 
 
 <?php
