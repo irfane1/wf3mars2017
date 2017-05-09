@@ -35,14 +35,16 @@ if(!empty($_POST)){
 
     if(strlen($_POST['telephone']) < 10 ) $message .= '<article>Le numéro de téléphone dois avoir 10 chiffre</article>';
 
-    if($_POST['type_contact'] != 'ami' && $_POST['type_contact'] != 'famille' && $_POST['type_contact'] != 'professionnel' && $_POST['type_contact'] != 'autre') $message .= '<article>Le id de contact n\'est pas correcte</article>';
+    if($_POST['type_contact'] != 'ami' && $_POST['type_contact'] != 'famille' && $_POST['type_contact'] != 'professionnel' && $_POST['type_contact'] != 'autre'){
+		$message .= '<article>Le id de contact n\'est pas correcte</article>';
+	} 
 				 
 	if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
         $message .= '<article>L\'email est invalide</article>';                        
     }
 
 	if(empty($message)){ // si les messages sont vides, c'est qu'il n'y a pas d'erreur
-        $resultat = $pdo->prepare("INSERT INTO contact(prenom, nom, type_contact, telephone, annee_rencontre, email)VALUES( :prenom, :nom, :type_contact, :telephone, :annee_rencontre, :email)");
+        $resultat = $pdo->prepare("INSERT INTO contact(prenom, nom, type_contact, telephone, annee_rencontre, email) VALUES( :prenom, :nom, :type_contact, :telephone, :annee_rencontre, :email)");
 
         $resultat->bindParam(':prenom', $_POST['prenom'], PDO::PARAM_STR);
         $resultat->bindParam(':nom', $_POST['nom'], PDO::PARAM_STR);

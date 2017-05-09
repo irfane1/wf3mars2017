@@ -13,7 +13,7 @@ if (isset($_POST['ajout_panier'])) {
 
     ajouterProduitDansPanier($produit['titre'], $_POST['id_produit'], $_POST['quantite'], $produit['prix']);
 
-    // On redirige vers la iche produit en indiquant que le produit a bien été ajouté au panier
+    // On redirige vers la fiche produit en indiquant que le produit a bien été ajouté au panier
     header('location:fiche_produit.php?statut_produit=ajoute&id_produit='. $_POST['id_produit']);
     exit();
 }
