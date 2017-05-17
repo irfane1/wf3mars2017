@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            div { width: 50%; margin: 0 auto; }
+            #demo { border: 1px solid; padding: 30px; }
+            div h1 { color: white; padding: 20px; background-color: darkred; }
+        </style>
+    </head>
+
+    <body>
+        <div id="titre">
+            <h1>ANCIEN TITRE</h1>
+            <button type="button" id="action2">Changer Titre</button>            
+        </div>
+        <div>
+            <p id="demo">...</p>
+            <button type="button" id="action">Changer Texte</button>
+        </div>
+
+        <script>
+        /*
+        Les statuts de la requête XMLHttpRequest
+        0 => objet créé, demande non initialisée
+        1 => connexion du serveur établie
+        2 => demande reçue par le serveur
+        3 => traitement côté serveur
+        4 => demande terminée, la réponse est reçue
+        */
+
+        /*
+        Les statuts HTTP
+        200 => ok
+        403 => Forbidden
+        404 => Page not found
+        ...
+        https://fr.wikipedia.org/wiki/Liste_des_codes_HTTP 
+        */
+
+
+        // on récupère l'élément qui a l'id action pour mettre en place un événement, exécution d'une fonction lors du clic.
+        document.getElementById("action").addEventListener("click", changeText);
+
+        function changeText() {
+            var xhttp = new XMLHttpRequest();  // instanciation de l'objet XMLHttpRequest
+
+            // mise en place d'un événement sur le changement d'état
+            xhttp.onreadystatechange = function() {
+                if(xhttp.readyState == 4 && xhttp.status == 200) {
+                    // lorsque le statut de la requête est à 4 et que le statut http vaut 200
+                    document.getElementById("demo").textContent = xhttp.responseText;
+                }
+            }
+            xhttp.open("GET", "ajax_info_text.txt", true);  // on prépare // 1er argument: la méthode, 2eme la page cible, 3eme mode asynchrone (true) ou sy,chrone (false) cette valeur est à true par défaut
+            xhttp.send();  // on envoie
+        }
+
+
+
+
+
+        // change contenu avec prise en charge de l'html
+        document.getElementById("action2").addEventListener("click", changeTitre);
+
+        function changeTitre() {
+            var xhttp = new XMLHttpRequest(); 
+
+            xhttp.onreadystatechange = function() {
+
+                if(xhttp.readyState == 4 && xhttp.status == 200) {
+                    // console.log(xhttp.responseText);
+                    document.getElementById("titre").innerHTML = xhttp.responseText;
+                }
+            }
+            xhttp.open("GET", "ajax_info_html.txt", true);
+            xhttp.send();  // on envoie
+        }
+
+        </script>
+    </body>
+</html>
