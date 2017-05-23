@@ -29,7 +29,7 @@ if (!empty ($_POST)) {  // si le formulaire est posté
     // Si aucune erreur sur le formulaire, on vérifie l'unicité du pseudo avant inscription en BDD
     if (empty($contenu)) {  // si $contenu est vide, c'est qu'il n'y a pas d'erreur    
 
-        executeRequete("INSERT INTO membre (nom, prenom, email, message) VALUES(:nom, :prenom, :email, :message)", array(':nom' => $_POST['nom'], ':prenom' => $_POST['prenom'], ':email' => $_POST['email'], ':message' => $_POST['message']));
+        // executeRequete("INSERT INTO membre (nom, prenom, email, message) VALUES(:nom, :prenom, :email, :message)", array(':nom' => $_POST['nom'], ':prenom' => $_POST['prenom'], ':email' => $_POST['email'], ':message' => $_POST['message']));
 
         $contenu .= '<div class="bg-success">Votre message a bien été envoyé.</div>';
 
@@ -64,7 +64,7 @@ if (!$inscription) :  // si membre non inscrit ($inscription vaut false), on aff
     <label for="email">Email</label><br>
     <input type="text" id="email" name="email" value=""><br><br>
 
-    <label>Message</label><br>
+    <label for="message">Message</label><br>
     <textarea name="message" cols="60" rows="10"></textarea><br><br>
 
     <input type="submit" name="inscription" value="envoyer" class="btn">

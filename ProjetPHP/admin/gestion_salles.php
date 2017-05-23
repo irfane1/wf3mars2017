@@ -42,36 +42,36 @@ if ($_POST) {  // équivalent à !empty($_POST) car si le $_POST est rempli, il 
 
     $photo = '';  // la photo subit un traitement spécifique en BDD. Cette variable contiendra son chemin d'accès
 
-    // // 9- Modification de la photo (suite)
-    // if (isset($_GET['action']) && $_GET['action'] == 'modification') {
-    //     // si je suis en modification, je mets en base la photo du champ hidden photo_actuelle du formulaire
-    //     $photo = $_POST['photo_actuelle'];
-    // }
+    // 9- Modification de la photo (suite)
+    if (isset($_GET['action']) && $_GET['action'] == 'modification') {
+        // si je suis en modification, je mets en base la photo du champ hidden photo_actuelle du formulaire
+        $photo = $_POST['photo_actuelle'];
+    }
 
 
-    // // 5- Traitement de la photo
-    // // echo '<pre>'; print_r($_FILES); echo '</pre>';
-    // if (!empty($_FILES['photo']['name'])) {  // si une image a été uploadée, $_FILES est remplie
+    // 5- Traitement de la photo
+    // echo '<pre>'; print_r($_FILES); echo '</pre>';
+    if (!empty($_FILES['photo']['name'])) {  // si une image a été uploadée, $_FILES est remplie
 
-    //     // On constitue un nom unique pour le fichier photo
-    //     $nom_photo = $_POST['reference'] . '_' . $_FILES['photo']['name'];
+        // On constitue un nom unique pour le fichier photo
+        $nom_photo = $_POST['id_salle'] . '_' . $_FILES['photo']['name'];
 
-    //     // On constitue le chemin de la photo enregistrée en BDD
-    //     $photo = RACINE_SITE . 'photo/' . $nom_photo;  // on obtient ici le nom et le chemin de la photo depuis la racine du site
+        // On constitue le chemin de la photo enregistrée en BDD
+        $photo = RACINE_SITE . 'photo/' . $nom_photo;  // on obtient ici le nom et le chemin de la photo depuis la racine du site
 
-    //     // On constitue le chemin absolu complet de la photo depuis la racine serveur
-    //     $photo_dossier = $_SERVER['DOCUMENT_ROOT'] . $photo;
+        // On constitue le chemin absolu complet de la photo depuis la racine serveur
+        $photo_dossier = $_SERVER['DOCUMENT_ROOT'] . $photo;
 
-    //     // echo '<pre>'; print_r($photo_dossier); echo '</pre>';
+        // echo '<pre>'; print_r($photo_dossier); echo '</pre>';
 
-    //     // Enregistrement du fichier photo sur le serveur
-    //     copy($_FILES['photo']['tmp_name'], $photo_dossier);  // on copie le fichier temporaire de la photo stockée au chemin indiqué par $_FILES['photo']['tmp_name'] dans le chemin $photo_dossier de notre serveur
+        // Enregistrement du fichier photo sur le serveur
+        copy($_FILES['photo']['tmp_name'], $photo_dossier);  // on copie le fichier temporaire de la photo stockée au chemin indiqué par $_FILES['photo']['tmp_name'] dans le chemin $photo_dossier de notre serveur
 
-    // }
+    }
 
 
     // 4- Suite de l'enregistrement en BDD
-    executeRequete("REPLACE INTO salle (id_salle, titre, description, photo, pays, ville, adresse, cp, capacite, categorie) VALUES(:id_salle, :titre, :description, :photo, :pays, :ville, :adresse, :cp, :capacite, : categorie)", array('id_salle' => $_POST['id_salle'], 'titre' => $_POST['titre'], 'description' => $_POST['description'],  ':photo' => $photo, 'pays' => $_POST['pays'], 'ville' => $_POST['ville'], 'adresse' => $_POST['adresse'], 'cp' => $_POST['cp'], 'capacite' => $_POST['capacite'], 'categorie' => $_POST['categorie'] ));
+    executeRequete("REPLACE INTO salle (id_salle, titre, description, photo, pays, ville, adresse, cp, capacite, categories) VALUES(:id_salle, :titre, :description, :photo, :pays, :ville, :adresse, :cp, :capacite, :categories)", array('id_salle' => $_POST['id_salle'], 'titre' => $_POST['titre'], 'description' => $_POST['description'],  ':photo' => $photo, 'pays' => $_POST['pays'], 'ville' => $_POST['ville'], 'adresse' => $_POST['adresse'], 'cp' => $_POST['cp'], 'capacite' => $_POST['capacite'], 'categories' => $_POST['categories'] ));
 
     $contenu .= '<div class="bg-success">Le produit a été enregistré</div>';
     $_GET['action'] = 'affichage';  // on met la valeur 'affichage' dans $_GET['action'] pour afficher automatiquement la table HTML des produits plus loin dans le script (point 6)
@@ -172,17 +172,17 @@ if (isset($_GET['action']) && ($_GET['action'] == 'ajout' || $_GET['action'] == 
     <label for="adresse">Adresse</label><br>
     <input type="text" id="adresse" name="adresse" placeholder="Adresse de la salle" value="<?php echo $salle_actuelle['adresse'] ?? ''; ?>"><br><br>
 
-    <label for=cp>Code postal</label><br>
+    <label for="cp">Code postal</label><br>
     <input id=cp name=cp type=text placeholder="Code postal de la salle" value="<?php echo $salle_actuelle['cp'] ?? ''; ?>"><br><br>
 
-    <label for=capacite>Capacité</label><br>
+    <label for="capacite">Capacité</label><br>
     <input id=capacite name=capacite type=text placeholder="Capacité de la salle" value="<?php echo $salle_actuelle['capacite'] ?? ''; ?>"><br><br>
 
-    <label>Catégorie</label><br>
-    <select name="categorie">
+    <label for="categories">Catégorie</label><br>
+    <select name="categories">
         <option value="reunion" selected>Réunion</option>
-        <option value="bureau" <?php if(isset($salle_actuelle['categorie']) && $salle_actuelle['categorie'] == 'bureau') echo 'selected'; ?>   >Bureau</option>
-        <option value="formation" <?php if(isset($salle_actuelle['categorie']) && $salle_actuelle['categorie'] == 'formation') echo 'selected'; ?>   >Formation</option>
+        <option value="bureau" <?php if(isset($salle_actuelle['categories']) && $salle_actuelle['categories'] == 'bureau') echo 'selected'; ?>   >Bureau</option>
+        <option value="formation" <?php if(isset($salle_actuelle['categories']) && $salle_actuelle['categories'] == 'formation') echo 'selected'; ?>   >Formation</option>
     </select><br><br><br>
 
     

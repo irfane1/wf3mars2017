@@ -9,15 +9,10 @@ require_once('../inc/init.inc.php');
 //     exit();
 // }
 
-$resultat = '';
+
 
 // 7- Suppression d'un membre
 if (isset($_GET['action']) && $_GET['action'] == 'suppression' && isset($_GET['id_membre'])) {
-
-    
-
-    $membre_a_supprimer = $resultat->fetch(PDO::FETCH_ASSOC);  // pas de while car qu'un seul produit
-
     
     // Puis suppression de la membre en BDD
     executeRequete("DELETE FROM membre WHERE id_membre = :id_membre", array(':id_membre' => $_GET['id_membre']));
@@ -30,14 +25,12 @@ if (isset($_GET['action']) && $_GET['action'] == 'suppression' && isset($_GET['i
 
 
 
-// 4- Enregistrement de la membre en BDD
+// 4- Enregistrement de l'avis en BDD
 if ($_POST) {  // équivalent à !empty($_POST) car si le $_POST est rempli, il vaut TRUE = formulaire posté
-
-    // ici il faudrait mettre les contrôles sur le formulaire
 
 
     // 4- Suite de l'enregistrement en BDD
-    executeRequete("REPLACE INTO membre (id_membre, pseudo, mdp, nom, prenom, email, civilite, statut, date) VALUES(:id_membre, :pseudo, :mdp, :nom, :prenom, :email, :civilite, :statut, NOW())", array('id_membre' => $_POST['id_membre'], 'pseudo' => $_POST['pseudo'], 'mdp' => $_POST['mdp'],  ':nom' => $_POST['nom'], 'prenom' => $_POST['prenom'], 'email' => $_POST['email'], 'civilite' => $_POST['civilite'], 'statut' => $_POST['statut'] ));
+    executeRequete("REPLACE INTO membre (id_membre, pseudo, mdp, nom, prenom, email, civilite, statut, date_enregistrement) VALUES(:id_membre, :pseudo, :mdp, :nom, :prenom, :email, :civilite, :statut, NOW())", array('id_membre' => $_POST['id_membre'], 'pseudo' => $_POST['pseudo'], 'mdp' => $_POST['mdp'], ':nom' => $_POST['nom'], 'prenom' => $_POST['prenom'], 'email' => $_POST['email'], 'civilite' => $_POST['civilite'], 'statut' => $_POST['statut']));
 
     $contenu .= '<div class="bg-success">Le membre a été enregistré</div>';
     $_GET['action'] = 'affichage';  // on met la valeur 'affichage' dans $_GET['action'] pour afficher automatiquement la table HTML des produits plus loin dans le script (point 6)
@@ -52,7 +45,7 @@ $contenu .= '<ul class="nav nav-tabs">
 
 
 
-// 6- Affichage des produits dans le back-office
+// 6- Affichage des membres dans le back-office
 if (isset($_GET['action']) && $_GET['action'] == 'affichage' || !isset($_GET['action'])) {  // si $_GET contient affichage ou que l'on arrive sur la page la 1ère fois ($_GET['action'] n'existe pas
 
     $resultat = executeRequete("SELECT * FROM membre");  // on sélectionne tous les membres
@@ -96,20 +89,22 @@ if (isset($_GET['action']) && $_GET['action'] == 'affichage' || !isset($_GET['ac
 
 
 
+
+
 // ---------------- AFFICHAGE -----------------------
 require_once('../inc/haut.inc.php');
 echo $contenu;
 
 // 3- Formulaire HTML
-if (isset($_GET['action']) && ($_GET['action'] == 'ajout' || $_GET['action'] == 'modification')) :
-// Si on a demandé l'ajout d'un produit ou sa modification , on affiche le formulaire
+if (isset($_GET['action']) && $_GET['action'] == 'modification') :
+// Si on a demandé la modification d'un avis, on affiche le formulaire
 
     // 8- Formulaire de modification avec présaisie des infos dans le formulaire
-    if (isset($_GET['id_membre'])) {
-        // Pour préremplir le formulaire, on requête en BDD les infos du produit passé dans l'URL
+    if (isset($_GET['id_avis'])) {
+        // Pour préremplir le formulaire, on requête en BDD les infos de l'avis passé dans l'URL
         $resultat = executeRequete("SELECT * FROM membre WHERE id_membre = :id_membre", array(':id_membre' => $_GET['id_membre']));
 
-        $membre_actuel = $resultat->fetch(PDO::FETCH_ASSOC);  // pas de while car qu'un seul produit
+        $membre_actuel = $resultat->fetch(PDO::FETCH_ASSOC);  // pas de while car qu'un seul avis
 
     }
 
@@ -121,19 +116,19 @@ if (isset($_GET['action']) && ($_GET['action'] == 'ajout' || $_GET['action'] == 
     <input type="hidden" id="id_membre" name="id_membre" value="<?php echo $membre_actuel['id_membre'] ?? 0; ?>"><!-- champ caché qui réceptionne -->
 
     <label for="pseudo">Pseudo</label><br>
-    <input type="text" id="pseudo" name="pseudo" value=""><br><br>
+    <input type="text" id="pseudo" name="pseudo" value="<?php echo $membre_actuel['pseudo'] ?? ''; ?>"><br><br>
 
     <label for="mdp">Mot de passe</label><br>
-    <input type="password" id="mdp" name="mdp" value=""><br><br>
+    <input type="password" id="mdp" name="mdp" value="<?php echo $membre_actuel['mdp'] ?? ''; ?>"><br><br>
 
     <label for="nom">Nom</label><br>
-    <input type="text" id="nom" name="nom" value=""><br><br>
+    <input type="text" id="nom" name="nom" value="<?php echo $membre_actuel['nom'] ?? ''; ?>"><br><br>
 
     <label for="prenom">Prénom</label><br>
-    <input type="text" id="prenom" name="prenom" value=""><br><br>
+    <input type="text" id="prenom" name="prenom" value="<?php echo $membre_actuel['prenom'] ?? ''; ?>"><br><br>
 
     <label for="email">Email</label><br>
-    <input type="text" id="email" name="email" value=""><br><br>
+    <input type="text" id="email" name="email" value="<?php echo $membre_actuel['email'] ?? ''; ?>"><br><br>
 
     <label>Civilité</label><br>
     <input type="radio" id="homme" name="civilite" value="m" checked><label for="homme">Homme</label><br>

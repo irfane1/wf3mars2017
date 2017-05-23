@@ -17,7 +17,7 @@ function internauteEstConnecte() {
 //---------
 function internauteEstConnecteEtEstAdmin() {
     // Cette fonction indique si le membre connecté est admin
-    if (internauteEstConnecte() && $_SESSION['membre']['statut'] == 1) {
+    if (internauteEstConnecte() && $_SESSION['membre']['statut'] == "admin") {
         return true;
     } else {
         return false;
