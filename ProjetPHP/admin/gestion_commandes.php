@@ -26,7 +26,7 @@ if ($_POST) {  // équivalent à !empty($_POST) car si le $_POST est rempli, il 
 
 
     // 4- Suite de l'enregistrement en BDD
-    executeRequete("REPLACE INTO commande (id_commande, id_membre, id_produit, date_enregistrement) VALUES(:id_commande, :id_membre, :id_produit, NOW())", array('id_commande' => $_POST['id_commande'], 'id_membre' => $_POST['id_membre'], 'id_produit' => $_POST['id_produit'] ));
+    executeRequete("REPLACE INTO commande (id_commande, id_membre, id_produit['prix'], date_enregistrement) VALUES(:id_commande, :id_membre, :id_produit['prix'], NOW())", array('id_commande' => $_POST['id_commande'], 'id_membre' => $_POST['id_membre'], 'id_produit' => $_POST['id_produit'] ));
 
     $contenu .= '<div class="bg-success">La commande a été enregistrée</div>';
     $_GET['action'] = 'affichage';  // on met la valeur 'affichage' dans $_GET['action'] pour afficher automatiquement la table HTML des produits plus loin dans le script (point 6)
@@ -68,14 +68,15 @@ if (isset($_GET['action']) && $_GET['action'] == 'affichage' || !isset($_GET['ac
                 }
 
                 $contenu .= '<td>
-                                <a href="?action=modification&id_commande='. $ligne['id_commande'] .'">Modifier</a> /
+                                <a href=""><i class="fa fa-search" aria-hidden="true"></i></a> /
                                 <a href="?action=suppression&id_commande='. $ligne['id_commande'] .'"
-                                onclick="return(confirm(\'Etes-vous certain de vouloir supprimer cette commande ? \'));" >Supprimer</a> 
+                                onclick="return(confirm(\'Etes-vous certain de vouloir supprimer cette commande ? \'));" ><i class="fa fa-trash-o" aria-hidden="true"></i></a> 
                             </td>';
             $contenu .= '</tr>';
         }
     $contenu .= '</table>';
 }
+
 
 
 

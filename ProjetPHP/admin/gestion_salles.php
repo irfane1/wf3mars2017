@@ -118,9 +118,10 @@ if (isset($_GET['action']) && $_GET['action'] == 'affichage' || !isset($_GET['ac
                 }
 
                 $contenu .= '<td>
-                                <a href="?action=modification&id_salle='. $ligne['id_salle'] .'">Modifier</a> /
+                                <a href=""><i class="fa fa-search" aria-hidden="true"></i></a> /
+                                <a href="?action=modification&id_salle='. $ligne['id_salle'] .'"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> /
                                 <a href="?action=suppression&id_salle='. $ligne['id_salle'] .'"
-                                onclick="return(confirm(\'Etes-vous certain de vouloir supprimer cette salle ? \'));" >Supprimer</a> 
+                                onclick="return(confirm(\'Etes-vous certain de vouloir supprimer cette salle ? \'));" ><i class="fa fa-trash-o" aria-hidden="true"></i></a> 
                             </td>';
             $contenu .= '</tr>';
         }

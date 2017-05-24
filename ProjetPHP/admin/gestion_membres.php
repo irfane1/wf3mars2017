@@ -77,9 +77,10 @@ if (isset($_GET['action']) && $_GET['action'] == 'affichage' || !isset($_GET['ac
                 }
 
                 $contenu .= '<td>
-                                <a href="?action=modification&id_membre='. $ligne['id_membre'] .'">Modifier</a> /
+                                <a href=""><i class="fa fa-search" aria-hidden="true"></i></a> /
+                                <a href="?action=modification&id_membre='. $ligne['id_membre'] .'"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> /
                                 <a href="?action=suppression&id_membre='. $ligne['id_membre'] .'"
-                                onclick="return(confirm(\'Etes-vous certain de vouloir supprimer ce membre ? \'));" >Supprimer</a> 
+                                onclick="return(confirm(\'Etes-vous certain de vouloir supprimer ce membre ? \'));" ><i class="fa fa-trash-o" aria-hidden="true"></i></a> 
                             </td>';
             $contenu .= '</tr>';
         }
@@ -96,11 +97,11 @@ require_once('../inc/haut.inc.php');
 echo $contenu;
 
 // 3- Formulaire HTML
-if (isset($_GET['action']) && $_GET['action'] == 'modification') :
+if (isset($_GET['action']) && ($_GET['action'] == 'ajout' || $_GET['action'] == 'modification')) :
 // Si on a demandé la modification d'un avis, on affiche le formulaire
 
     // 8- Formulaire de modification avec présaisie des infos dans le formulaire
-    if (isset($_GET['id_avis'])) {
+    if (isset($_GET['id_membre'])) {
         // Pour préremplir le formulaire, on requête en BDD les infos de l'avis passé dans l'URL
         $resultat = executeRequete("SELECT * FROM membre WHERE id_membre = :id_membre", array(':id_membre' => $_GET['id_membre']));
 

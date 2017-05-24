@@ -41,7 +41,29 @@
                         echo '<li><a href="'. RACINE_SITE .'contact.php">Contact</a></li>';
                         
 
-                        if(internauteEstConnecte()) {  // si membre est connecté
+                        if(internauteEstConnecteEtEstAdmin()) {    // Menu admin
+
+                            echo '<ul class="nav navbar-nav navbar-right">
+            
+                                    <li class="dropdown">
+                                    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i> Espace Membre <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="'. RACINE_SITE .'admin/gestion_salles.php">Gestion des salles</a></li>
+                                        <li><a href="'. RACINE_SITE .'admin/gestion_produits.php">Gestion des produits</a></li>
+                                        <li><a href="'. RACINE_SITE .'admin/gestion_membres.php">Gestion des membres</a></li>
+                                        <li><a href="'. RACINE_SITE .'admin/gestion_avis.php">Gestion des avis</a></li>
+                                        <li><a href="'. RACINE_SITE .'admin/gestion_commandes.php">Gestion des commandes</a></li>
+                                        <li role="separator" class="divider"></li>                                        
+                                        <li><a href="'. RACINE_SITE .'admin/statistiques.php">Statistiques</a></li>                               
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="'. RACINE_SITE .'connexion.php?action=deconnexion">Se déconnecter</a></li>
+                                    </ul>
+                                    </li>
+                                </ul>';    
+
+
+                        } elseif (internauteEstConnecte()) {  // si membre est connecté
                             echo '<ul class="nav navbar-nav navbar-right">
         
                                 <li class="dropdown">
@@ -50,34 +72,25 @@
                                     <li><a href="#">Mon compte</a></li>
                                     <li><a href="#">Mes commandes</a></li>
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="'. RACINE_SITE .'admin/connexion.php">Se déconnecter</a></li>
+                                    <li><a href="'. RACINE_SITE .'connexion.php?action=deconnexion">Se déconnecter</a></li>
                                 </ul>
                                 </li>
                             </ul>';      
-                            echo '<li><a href="'. RACINE_SITE .'profil.php">Profil</a></li>';
-
-
-                        } elseif (internauteEstConnecteEtEstAdmin()) {    // Menu admin
+                            echo '<li><a href="'. RACINE_SITE .'profil.php">Profil</a></li>';         
+  
+                        } else {  // sinon s'il n'est pas connecté
 
                             echo '<ul class="nav navbar-nav navbar-right">
             
                                     <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Espace membre <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="'. RACINE_SITE .'admin/gestion_salles.php">Gestion des salles</a></li>
-                                        <li><a href="'. RACINE_SITE .'admin/gestion_produits.php">Gestion des produits</a></li>
-                                        <li><a href="'. RACINE_SITE .'admin/gestion_membres.php">Gestion des membres</a></li>
-                                        <li><a href="'. RACINE_SITE .'admin/gestion_avis.php">Gestion des avis</a></li>
-                                        <li><a href="'. RACINE_SITE .'admin/gestion_commandes.php">Gestion des commandes</a></li>
-                                        <li role="separator" class="divider"></li>
-                                        <li><a href="'. RACINE_SITE .'admin/connexion.php">Se déconnecter</a></li>
+                                        <li><a href="'. RACINE_SITE .'inscription.php">Inscription</a></li>
+                                        <li><a href="'. RACINE_SITE .'connexion.php">Connexion</a></li>
                                     </ul>
                                     </li>
-                                </ul>';             
-  
-                        } else {  // sinon s'il n'est pas connecté
+                                </ul>';  
 
-                            echo '<li><a href="'. RACINE_SITE .'connexion.php">Connexion</a></li>';
                         }
 
 

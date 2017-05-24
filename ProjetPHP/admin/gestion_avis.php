@@ -69,9 +69,10 @@ if (isset($_GET['action']) && $_GET['action'] == 'affichage' || !isset($_GET['ac
                 }
 
                 $contenu .= '<td>
-                                <a href="?action=modification&id_avis='. $ligne['id_avis'] .'">Modifier</a> /
+                                <a href=""><i class="fa fa-search" aria-hidden="true"></i></a> /
+                                <a href="?action=modification&id_avis='. $ligne['id_avis'] .'"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> /
                                 <a href="?action=suppression&id_avis='. $ligne['id_avis'] .'"
-                                onclick="return(confirm(\'Etes-vous certain de vouloir supprimer cet avis ? \'));" >Supprimer</a> 
+                                onclick="return(confirm(\'Etes-vous certain de vouloir supprimer cet avis ? \'));" ><i class="fa fa-trash-o" aria-hidden="true"></i></a> 
                             </td>';
             $contenu .= '</tr>';
         }

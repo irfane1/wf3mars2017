@@ -118,9 +118,10 @@ if (isset($_GET['action']) && $_GET['action'] == 'affichage' || !isset($_GET['ac
                 }
 
                 $contenu .= '<td>
-                                <a href="?action=modification&id_produit='. $ligne['id_produit'] .'">Modifier</a> /
+                                <a href=""><i class="fa fa-search" aria-hidden="true"></i></a> /
+                                <a href="?action=modification&id_produit='. $ligne['id_produit'] .'"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> /
                                 <a href="?action=suppression&id_produit='. $ligne['id_produit'] .'"
-                                onclick="return(confirm(\'Etes-vous certain de vouloir supprimer cette produit ? \'));" >Supprimer</a> 
+                                onclick="return(confirm(\'Etes-vous certain de vouloir supprimer cette produit ? \'));" ><i class="fa fa-trash-o" aria-hidden="true"></i></a> 
                             </td>';
             $contenu .= '</tr>';
         }
@@ -150,6 +151,8 @@ if (isset($_GET['action']) && ($_GET['action'] == 'ajout' || $_GET['action'] == 
 
 ?>
 
+
+
 <h3>Formulaire d'ajout ou de modification d'un produit</h3>
 <form method ="post" enctype="multipart/form-data" action=""><!-- "multipart/form-data" permet d'uploader un fichier et de générer une superglobale $_FILES -->
 
@@ -165,13 +168,8 @@ if (isset($_GET['action']) && ($_GET['action'] == 'ajout' || $_GET['action'] == 
     <input type="text" id="id_salle" name="id_salle" value="<?php echo $produit_actuel['id_salle'] ?? ''; ?>"><br><br>
 
     <label for="prix">Prix</label><br>
-    <input type="number" id="prix" name="prix" min="0" value="<?php echo $produit_actuel['prix'] ?? '€'; ?>"><br><br>
+    <input type="number" id="prix" name="prix" min="0" value="<?php echo $produit_actuel['prix'] ?? ''; ?>"><br><br>
 
-    <label for="etat">Catégorie</label><br>
-    <select name="etat">
-        <option value="libre" selected>Libre</option>
-        <option value="reservation" <?php if(isset($salle_actuelle['etat']) && $salle_actuelle['etat'] == 'reservation') echo 'selected'; ?>   >Réservation</option>
-    </select><br><br><br>
 
     
 
